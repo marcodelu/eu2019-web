@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatIconModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {SharedModule} from './core/shared.module';
 
@@ -11,13 +10,10 @@ import {SharedModule} from './core/shared.module';
     AppComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     BrowserAnimationsModule,
-    SharedModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatTooltipModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 // Color Tool https://material.io/tools/color/#!/?view.left=1&view.right=1&primary.color=003399&secondary.color=f5d547&primary.text.color=ffffff
 // Palette generator http://mcg.mbitson.com/#!?primary=%23003399&secondary=%23f5d547&themename=materialtheme
-
 @import '~@angular/material/theming';
+
 @include mat-core();
 
 //$app-typography: mat-typography-config(
@@ -10,53 +10,53 @@
 //@include mat-core($app-typography);
 
 $mat-eu-blue: (
-  50 : #e0e7f3,
-  100 : #b3c2e0,
-  200 : #8099cc,
-  300 : #4d70b8,
-  400 : #2652a8,
+  50 : #E0E7F3,
+  100 : #B3C2E0,
+  200 : #8099CC,
+  300 : #4D70B8,
+  400 : #2652A8,
   500 : #003399,
-  600 : #002e91,
+  600 : #002E91,
   700 : #002786,
-  800 : #00207c,
-  900 : #00146b,
-  A100 : #9aa5ff,
-  A200 : #6778ff,
-  A400 : #344aff,
-  A700 : #1a33ff,
+  800 : #00207C,
+  900 : #00146B,
+  A100 : #9AA5FF,
+  A200 : #6778FF,
+  A400 : #344AFF,
+  A700 : #1A33FF,
   contrast: (
     50 : #000000,
     100 : #000000,
     200 : #000000,
-    300 : #ffffff,
-    400 : #ffffff,
-    500 : #ffffff,
-    600 : #ffffff,
-    700 : #ffffff,
-    800 : #ffffff,
-    900 : #ffffff,
+    300 : #FFFFFF,
+    400 : #FFFFFF,
+    500 : #FFFFFF,
+    600 : #FFFFFF,
+    700 : #FFFFFF,
+    800 : #FFFFFF,
+    900 : #FFFFFF,
     A100 : #000000,
     A200 : #000000,
-    A400 : #ffffff,
-    A700 : #ffffff,
+    A400 : #FFFFFF,
+    A700 : #FFFFFF,
   )
 );
 
 $mat-eu-yellow: (
-  50 : #fefae9,
-  100 : #fcf2c8,
-  200 : #faeaa3,
-  300 : #f8e27e,
-  400 : #f7db63,
-  500 : #f5d547,
-  600 : #f4d040,
-  700 : #f2ca37,
-  800 : #f0c42f,
-  900 : #eeba20,
-  A100 : #ffffff,
-  A200 : #fffbf1,
-  A400 : #ffeebe,
-  A700 : #ffe7a5,
+  50 : #FEFAE9,
+  100 : #FCF2C8,
+  200 : #FAEAA3,
+  300 : #F8E27E,
+  400 : #F7DB63,
+  500 : #F5D547,
+  600 : #F4D040,
+  700 : #F2CA37,
+  800 : #F0C42F,
+  900 : #EEBA20,
+  A100 : #FFFFFF,
+  A200 : #FFFBF1,
+  A400 : #FFEEBE,
+  A700 : #FFE7A5,
   contrast: (
     50 : #000000,
     100 : #000000,
@@ -74,9 +74,6 @@ $mat-eu-yellow: (
     A700 : #000000,
   )
 );
-
-
-
 
 $app-primary: mat-palette($mat-eu-blue);
 $app-accent: mat-palette($mat-eu-yellow);
