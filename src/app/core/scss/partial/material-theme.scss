@@ -84,3 +84,19 @@ $app-background: map-get($app-theme, background);
 $light-dividers: rgba(white, 0.12);
 
 @include angular-material-theme($app-theme);
+
+.color-primary {
+  color: mat-color($app-primary);
+}
+
+.color-accent {
+  color: mat-color($app-accent);
+}
+
+.background-primary {
+  background: mat-color($app-primary);
+}
+
+.background-accent {
+  background: mat-color($app-accent);
+}

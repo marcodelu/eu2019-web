@@ -1,0 +1,18 @@
+@import "~src/app/core/scss/partial/material-theme";
+
+#work-in-progress {
+  background: mat-color($app-primary);
+  color: mat-color($app-accent);
+
+}
+
+.star {
+  font-size: 60px;
+}
+
+.first-row {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
