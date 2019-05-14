@@ -1,0 +1,89 @@
+// Color Tool https://material.io/tools/color/#!/?view.left=1&view.right=1&primary.color=003399&secondary.color=f5d547&primary.text.color=ffffff
+// Palette generator http://mcg.mbitson.com/#!?primary=%23003399&secondary=%23f5d547&themename=materialtheme
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+//$app-typography: mat-typography-config(
+//  $font-family: 'Ubuntu, sans-serif'
+//);
+//@include mat-core($app-typography);
+
+$mat-eu-blue: (
+  50 : #e0e7f3,
+  100 : #b3c2e0,
+  200 : #8099cc,
+  300 : #4d70b8,
+  400 : #2652a8,
+  500 : #003399,
+  600 : #002e91,
+  700 : #002786,
+  800 : #00207c,
+  900 : #00146b,
+  A100 : #9aa5ff,
+  A200 : #6778ff,
+  A400 : #344aff,
+  A700 : #1a33ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-eu-yellow: (
+  50 : #fefae9,
+  100 : #fcf2c8,
+  200 : #faeaa3,
+  300 : #f8e27e,
+  400 : #f7db63,
+  500 : #f5d547,
+  600 : #f4d040,
+  700 : #f2ca37,
+  800 : #f0c42f,
+  900 : #eeba20,
+  A100 : #ffffff,
+  A200 : #fffbf1,
+  A400 : #ffeebe,
+  A700 : #ffe7a5,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+
+
+$app-primary: mat-palette($mat-eu-blue);
+$app-accent: mat-palette($mat-eu-yellow);
+$app-warn: mat-palette($mat-deep-orange);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-foreground: map-get($app-theme, foreground);
+$app-background: map-get($app-theme, background);
+$light-dividers: rgba(white, 0.12);
+
+@include angular-material-theme($app-theme);
