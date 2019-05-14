@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
+import {ResizeService} from './core/service/resize.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,11 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
+  constructor(private resizeService: ResizeService) {
+  }
+
+  @HostListener('window:resize', ['$event.target.innerWidth', '$event.target.innerHeight'])
+  onResize(width: number, height: number) {
+    this.resizeService.resize = {width, height};
   }
 }

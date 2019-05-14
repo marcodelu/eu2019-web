@@ -1,7 +1,11 @@
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatIconModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
+import {ChartsModule} from 'ng2-charts';
+import {HttpService} from '../../core/service/http.service';
+import {ResizeService} from '../../core/service/resize.service';
 import {SharedModule} from '../../core/shared.module';
+import {ChartMostActiveCountriesComponent} from './component/chart-most-active-countries/chart-most-active-countries.component';
 import {MainComponent} from './main.component';
 
 const routes: Routes = [
@@ -17,7 +21,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    ChartMostActiveCountriesComponent
   ],
   imports: [
     SharedModule,
@@ -25,7 +30,13 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCardModule,
+    ChartsModule
+  ],
+  providers: [
+    HttpService,
+    ResizeService
   ]
 })
 export class MainModule {

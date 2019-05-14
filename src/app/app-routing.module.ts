@@ -22,7 +22,7 @@ const workInProgressRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(workInProgressRoutes)
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   exports: [
