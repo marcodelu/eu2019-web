@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
-import {ResizeService} from './core/service/resize.service';
+import {AfterViewInit, Component} from '@angular/core';
 import {SplashScreenService} from './core/service/splash-screen.service';
 
 @Component({
@@ -19,16 +18,10 @@ import {SplashScreenService} from './core/service/splash-screen.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  constructor(private resizeService: ResizeService,
-              private splashScreenService: SplashScreenService) {
+  constructor(private splashScreenService: SplashScreenService) {
   }
 
   ngAfterViewInit(): void {
     // this.splashScreenService.hide();
-  }
-
-  @HostListener('window:resize', ['$event.target.innerWidth', '$event.target.innerHeight'])
-  onResize(width: number, height: number) {
-    this.resizeService.resize = {width, height};
   }
 }

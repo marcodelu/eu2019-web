@@ -7,7 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {WorkInProgressComponent} from './children/work-in-progress/work-in-progress.component';
 import {HttpService} from './core/service/http.service';
-import {ResizeService} from './core/service/resize.service';
+import {SplashScreenService} from './core/service/splash-screen.service';
 import {SharedModule} from './core/shared.module';
 
 @NgModule({
@@ -25,7 +25,7 @@ import {SharedModule} from './core/shared.module';
   ],
   providers: [
     HttpService,
-    ResizeService
+    SplashScreenService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,19 +5,14 @@ import {Inject, Injectable} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter, take} from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SplashScreenService {
   splashScreenEl: any;
   player: AnimationPlayer;
 
-  constructor(
-    private _animationBuilder: AnimationBuilder,
-    @Inject(DOCUMENT) private _document: any,
-    private _router: Router
-  ) {
-    // Initialize
+  constructor(private _animationBuilder: AnimationBuilder,
+              @Inject(DOCUMENT) private _document: any,
+              private _router: Router) {
     this._init();
   }
 
@@ -68,7 +63,7 @@ export class SplashScreenService {
         .subscribe(() => {
           setTimeout(() => {
             this.hide();
-          });
+          }, 1000);
         });
     }
   }

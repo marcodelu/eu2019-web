@@ -1,8 +1,6 @@
 import {AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {ChartOptions} from 'chart.js';
 import {Label} from 'ng2-charts';
-import {Subscription} from 'rxjs';
-import {ResizeService} from '../../../../core/service/resize.service';
 
 export interface MostActiveCountry {
   country: string;
@@ -46,25 +44,17 @@ export class ChartMostActiveCountriesComponent implements OnInit, AfterViewInit,
     }
   ];
 
-  private resizeSubscripion: Subscription;
-
-  constructor(private resizeService: ResizeService) {
+  constructor() {
   }
 
   ngOnInit() {
-    console.log(this.data);
     this.parseData();
   }
 
   ngAfterViewInit() {
-    this.resizeSubscripion = this.resizeService.resizeObservable$.subscribe(value => {
-      console.log('porcodio', value);
-    });
   }
 
   ngOnDestroy() {
-    console.log('destoryy');
-    this.resizeSubscripion.unsubscribe();
   }
 
   ngOnChanges(c: SimpleChanges) {

@@ -3,7 +3,6 @@ import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule, MatTool
 import {RouterModule, Routes} from '@angular/router';
 import {ChartsModule} from 'ng2-charts';
 import {HttpService} from '../../core/service/http.service';
-import {ResizeService} from '../../core/service/resize.service';
 import {SharedModule} from '../../core/shared.module';
 import {ChartMostActiveCountriesComponent} from './component/chart-most-active-countries/chart-most-active-countries.component';
 import {MainComponent} from './main.component';
@@ -35,8 +34,7 @@ const routes: Routes = [
     ChartsModule
   ],
   providers: [
-    HttpService,
-    ResizeService
+    HttpService
   ]
 })
 export class MainModule {
