@@ -2,15 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Eu Elections</title>
+  <title>Elections Stats</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Splash Screen CSS -->
+  <style type="text/css">
+    #splash-screen {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #003399;
+      z-index: 99999;
+      pointer-events: none;
+    }
+
+    #splash-screen .center {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #splash-screen .logo {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    #splash-screen .logo img {
+      filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2))
+    }
+
+    #splash-screen .loader {
+      height: 5px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      overflow: hidden;
+      background-color: transparent;
+    }
+
+    .loader:before {
+      display: block;
+      position: absolute;
+      content: "";
+      left: -200px;
+      width: 200px;
+      height: 5px;
+      background-color: #F5D547;
+      animation: loading 2s linear infinite;
+    }
+
+    @keyframes loading {
+      from {
+        left: -200px;
+        width: 30%;
+      }
+      50% {
+        width: 30%;
+      }
+      70% {
+        width: 70%;
+      }
+      80% {
+        left: 50%;
+      }
+      95% {
+        left: 120%;
+      }
+      to {
+        left: 100%;
+      }
+    }
+
+  </style>
+  <!-- / Splash Screen CSS -->
+
 </head>
 <body>
+
+<!-- Splash Screen -->
+<splash-screen id="splash-screen">
+  <div class="center">
+    <div class="logo">
+      <img width="300" src="assets/logo.png">
+    </div>
+  </div>
+  <div class="loader"></div>
+</splash-screen>
+<!-- / Splash Screen -->
+
 <app-root></app-root>
 </body>
 </html>
