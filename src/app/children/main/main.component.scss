@@ -1,8 +1,33 @@
+mat-toolbar {
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+}
+
 .main-container {
   padding: 24px;
 }
 
 footer {
   text-align: center;
-  color: #D3D3D3;
+  color: rgba(0, 0, 0, .58);
+}
+
+.mat-card {
+  box-shadow: none;
+
+  border: 1px solid rgba(0, 0, 0, .12);
+
+  mat-icon {
+    color: #003399;
+
+    svg {
+      fill: #003399;
+    }
+
+    svg path {
+      fill: #003399;
+    }
+  }
 }

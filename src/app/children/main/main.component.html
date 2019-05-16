@@ -1,7 +1,9 @@
 <div fxFill fxLayout="column">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span style="flex: 1 1 auto;">Elections Stats</span>
+      <span style="flex: 1 1 auto;" fxLayoutAlign="start center">
+        <img class="logo" src="assets/logo.png" alt="Election Stats">
+      </span>
       <button mat-icon-button color="accent" matTooltip="Share">
         <mat-icon>share</mat-icon>
       </button>
@@ -15,24 +17,21 @@
 
     <div fxLayout="row" fxLayoutGap="24px">
       <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex>
-          <mat-icon matTooltip="Tweet">public</mat-icon>
-        </div>
-        <div>123.000</div>
+        <mat-icon svgIcon="twitter"></mat-icon>
+        <span fxFlex>&nbsp; Tweets</span>
+        <span>100.000</span>
       </mat-card>
 
       <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex>
-          <mat-icon matTooltip="Ultimo aggiornamento">refresh</mat-icon>
-        </div>
-        <div>15/05/19 20:00</div>
+        <mat-icon>refresh</mat-icon>
+        <span fxFlex>&nbsp; Last update</span>
+        <span>15/05/19 20:00</span>
       </mat-card>
 
       <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex>
-          <mat-icon matTooltip="Countdown">date_range</mat-icon>
-        </div>
-        <div>- 14 days</div>
+        <mat-icon>date_range</mat-icon>
+        <span fxFlex>&nbsp; Elections</span>
+        <span>- 10 days</span>
       </mat-card>
     </div>
 

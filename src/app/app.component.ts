@@ -1,4 +1,6 @@
 import {AfterViewInit, Component} from '@angular/core';
+import {MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 import {SplashScreenService} from './core/service/splash-screen.service';
 
 @Component({
@@ -18,7 +20,11 @@ import {SplashScreenService} from './core/service/splash-screen.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  constructor(private splashScreenService: SplashScreenService) {
+  constructor(private iconRegistry: MatIconRegistry,
+              private sanitizer: DomSanitizer,
+              private splashScreenService: SplashScreenService) {
+
+    iconRegistry.addSvgIcon('twitter', sanitizer.bypassSecurityTrustResourceUrl('assets/img/icons/twitter-icon.svg'));
   }
 
   ngAfterViewInit(): void {
