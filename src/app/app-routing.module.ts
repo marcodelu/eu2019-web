@@ -4,19 +4,16 @@ import {WorkInProgressComponent} from './children/work-in-progress/work-in-progr
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'chart',
     loadChildren: './children/main/main.module#MainModule'
+  },
+  {
+    path: '',
+    component: WorkInProgressComponent
   },
   {
     path: '**',
     redirectTo: ''
-  }
-];
-
-const workInProgressRoutes: Routes = [
-  {
-    path: '**',
-    component: WorkInProgressComponent
   }
 ];
 
