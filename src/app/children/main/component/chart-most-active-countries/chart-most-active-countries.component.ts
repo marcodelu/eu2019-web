@@ -19,7 +19,7 @@ export class ChartMostActiveCountriesComponent implements OnInit, AfterViewInit,
   public pieChartOptions: ChartOptions = {
     responsive: true,
     title: null,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
   };
   public pieChartLabels: Label[] = [];
   public pieChartData: number[] = [];
