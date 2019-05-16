@@ -4,10 +4,10 @@
 
 @include mat-core();
 
-//$app-typography: mat-typography-config(
-//  $font-family: 'Ubuntu, sans-serif'
-//);
-//@include mat-core($app-typography);
+$app-typography: mat-typography-config(
+  $font-family: 'Montserrat, sans-serif'
+);
+@include mat-core($app-typography);
 
 $mat-eu-blue: (
   50 : #E0E7F3,

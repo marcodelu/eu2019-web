@@ -20,11 +20,39 @@ export class ChartMostActiveCountriesComponent implements OnInit, AfterViewInit,
     responsive: true,
     title: null,
     maintainAspectRatio: false,
+    legend: {
+      labels: {
+        fontFamily: 'Montserrat, sans-serif'
+      },
+      position: 'bottom'
+    },
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        top: 20,
+        bottom: 0
+      }
+    }
   };
   public pieChartLabels: Label[] = [];
   public pieChartData: number[] = [];
   public pieChartLegend = true;
-  public pieChartPlugins = [];
+  public pieChartPlugins = [
+    {
+      beforeInit: (chart, options) => {
+        chart.legend.afterFit = () => {
+          if (chart.legend.margins) {
+            // Put some padding around the legend/labels
+            chart.legend.options.labels.padding = 20;
+            // Because you added 20px of padding around the whole legend,
+            // you will need to increase the height of the chart to fit it
+            chart.height += 40;
+          }
+        };
+      }
+    }
+  ];
   public pieColors = [
     {
       backgroundColor: [
