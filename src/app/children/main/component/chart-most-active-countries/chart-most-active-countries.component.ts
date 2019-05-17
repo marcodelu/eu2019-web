@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ChartOptions} from 'chart.js';
 import {Label} from 'ng2-charts';
 
@@ -12,7 +12,7 @@ export interface MostActiveCountry {
   templateUrl: './chart-most-active-countries.component.html',
   styleUrls: ['./chart-most-active-countries.component.scss']
 })
-export class ChartMostActiveCountriesComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
+export class ChartMostActiveCountriesComponent implements OnInit, OnChanges {
 
   @Input() data: [MostActiveCountry];
 
@@ -79,16 +79,9 @@ export class ChartMostActiveCountriesComponent implements OnInit, AfterViewInit,
     this.parseData();
   }
 
-  ngAfterViewInit() {
-  }
-
-  ngOnDestroy() {
-  }
-
   ngOnChanges(c: SimpleChanges) {
     if (c.data.previousValue && c.data.previousValue !== c.data.currentValue) {
       this.parseData();
-      console.log(this.data);
     }
   }
 
