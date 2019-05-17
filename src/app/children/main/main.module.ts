@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import {ChartsModule} from 'ng2-charts';
+import {ChartService} from '../../core/service/chart.service';
 import {DataService} from '../../core/service/data.service';
 import {HttpService} from '../../core/service/http.service';
 import {SharedModule} from '../../core/shared.module';
@@ -38,7 +39,8 @@ const routes: Routes = [
   ],
   providers: [
     HttpService,
-    DataService
+    DataService,
+    ChartService
   ]
 })
 export class MainModule {

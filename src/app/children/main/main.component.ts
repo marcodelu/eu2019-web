@@ -12,6 +12,9 @@ export class MainComponent implements OnInit, OnDestroy {
   mostActiveContriesSubscription = null;
 
   mostActiveContriesData = [];
+  totalTweets = 0;
+  lastUpdate = Date();
+
   days = [];
 
   constructor(private dataService: DataService) {
@@ -21,7 +24,12 @@ export class MainComponent implements OnInit, OnDestroy {
     this.mostActiveContriesSubscription = timer(0, 5 * 60 * 1000)
       .subscribe(() => {
         this.dataService.getMostActiveCountries()
-          .subscribe(res => this.mostActiveContriesData = res);
+          .subscribe(res => {
+            this.mostActiveContriesData = res;
+
+            this.totalTweets = res.map(i => i.value).reduce((a, b) => a + b);
+            this.lastUpdate = Date();
+          });
       });
 
     // this.httpService.get('/exported_tweets_countries.json').subscribe((res: MostActiveCountry[]) => {
@@ -38,6 +46,8 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.mostActiveContriesSubscription.unsubscribe();
+    if (this.mostActiveContriesSubscription) {
+      this.mostActiveContriesSubscription.unsubscribe();
+    }
   }
 }

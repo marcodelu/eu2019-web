@@ -19,19 +19,19 @@
       <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
         <mat-icon svgIcon="twitter"></mat-icon>
         <span fxFlex>&nbsp; Tweets</span>
-        <span>100.000</span>
+        <span>{{totalTweets | number}}</span>
       </mat-card>
 
       <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
         <mat-icon>refresh</mat-icon>
         <span fxFlex>&nbsp; Last update</span>
-        <span>15/05/19 20:00</span>
+        <span>{{lastUpdate | date:'short'}}</span>
       </mat-card>
 
       <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
         <mat-icon>date_range</mat-icon>
         <span fxFlex>&nbsp; Elections</span>
-        <span>- 10 days</span>
+        <span>- 8 days</span>
       </mat-card>
     </div>
 
