@@ -8,6 +8,7 @@ import {environment} from '../../../environments/environment';
 export class HttpService {
   private commonHeaders: HttpHeaders;
   private baseUrl = environment.baseUrl;
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {
     this.commonHeaders = new HttpHeaders()
@@ -15,7 +16,7 @@ export class HttpService {
   }
 
   public get(url: string, params?: HttpParams): Observable<any> {
-    const newUrl = this.baseUrl + url;
+    const newUrl = this.apiUrl + url;
     return this.http.get(newUrl, {
       headers: this.commonHeaders,
       params,
