@@ -19,8 +19,8 @@ export class DataService {
           return mostActiveCountries
             .filter(mostActiveCountry => mostActiveCountry.country.toLowerCase() !== 'und')
             .map(mostActiveCountry => {
-              const name = this.languages.find(language => language.code === mostActiveCountry.country.toLowerCase()).name;
-              mostActiveCountry.country = name ? name : mostActiveCountry.country;
+              const language = this.languages.find(l => l.code === mostActiveCountry.country.toLowerCase());
+              mostActiveCountry.country = (language && language.name) ? language.name : mostActiveCountry.country;
               return mostActiveCountry;
             })
             .sort((a, b) => a.country > b.country ? 1 : -1);

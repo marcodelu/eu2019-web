@@ -529,7 +529,7 @@ export let languages = [
   },
   {
     code: 'ro',
-    name: 'Romanian, [])'
+    name: 'Romanian'
   },
   {
     code: 'ru',

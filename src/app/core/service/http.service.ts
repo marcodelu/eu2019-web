@@ -21,7 +21,7 @@ export class HttpService {
       headers: this.commonHeaders,
       params,
       responseType: 'json',
-      withCredentials: true
+      withCredentials: false
     })
       .pipe(
         catchError(this.handleError)
