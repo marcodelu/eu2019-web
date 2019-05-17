@@ -35,14 +35,25 @@
       </mat-card>
     </div>
 
-    <mat-card fxLayout="column">
-      <mat-card-header>
-        <mat-card-title># of tweets per country</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <app-chart-most-active-countries [data]="mostActiveContriesData"></app-chart-most-active-countries>
-      </mat-card-content>
-    </mat-card>
+    <div fxLayout="row" fxLayoutGap="24px">
+      <mat-card fxFlex="50" fxLayout="column">
+        <mat-card-header>
+          <mat-card-title># of tweets per country</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-chart-most-active-countries [data]="mostActiveContriesData"></app-chart-most-active-countries>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card fxFlex="50" fxLayout="column">
+        <mat-card-header>
+          <mat-card-title># of tweets per day</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-chart-per-days [data]="days"></app-chart-per-days>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
   <footer>made with ❤️from Tilburg</footer>

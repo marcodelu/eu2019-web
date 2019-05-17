@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
   languages = languages;
 
   mostActiveContriesData = [];
+  days = [];
 
   constructor(private httpService: HttpService) {
   }
