@@ -7,6 +7,10 @@ mat-toolbar {
 
 .main-container {
   padding: 24px;
+
+  .stats-card {
+    min-height: 60px;
+  }
 }
 
 footer {

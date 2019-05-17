@@ -4,38 +4,35 @@
       <span style="flex: 1 1 auto;" fxLayoutAlign="start center">
         <img class="logo" src="assets/logo.png" alt="Election Stats">
       </span>
-      <button mat-icon-button color="accent" matTooltip="Share">
-        <mat-icon>share</mat-icon>
-      </button>
-      <button mat-icon-button color="accent" matTooltip="About the project">
-        <mat-icon>favorite</mat-icon>
+      <button mat-button color="accent" routerLink="/about">
+        <span>About the project</span>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div fxFlex class="main-container" fxLayout="column" fxLayoutGap="24px">
+  <div class="main-container" fxFlex fxLayout="column" fxLayoutGap="24px">
 
-    <div fxLayout="row" fxLayoutGap="24px">
-      <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
+      <mat-card class="stats-card" fxFlex fxLayout="row" fxLayoutAlign="center center">
         <mat-icon svgIcon="twitter"></mat-icon>
         <span fxFlex>&nbsp; Tweets</span>
         <span>{{totalTweets | number}}</span>
       </mat-card>
 
-      <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="stats-card" fxFlex fxLayout="row" fxLayoutAlign="center center">
         <mat-icon>refresh</mat-icon>
         <span fxFlex>&nbsp; Last update</span>
         <span>{{lastUpdate | date:'short'}}</span>
       </mat-card>
 
-      <mat-card fxFlex fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="stats-card" fxFlex fxLayout="row" fxLayoutAlign="center center">
         <mat-icon>date_range</mat-icon>
         <span fxFlex>&nbsp; Elections</span>
         <span>- 8 days</span>
       </mat-card>
     </div>
 
-    <div fxLayout="row" fxLayoutGap="24px">
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
       <mat-card fxFlex="50" fxLayout="column">
         <mat-card-header>
           <mat-card-title># of tweets per country</mat-card-title>

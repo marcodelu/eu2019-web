@@ -4,6 +4,10 @@ import {WorkInProgressComponent} from './children/work-in-progress/work-in-progr
 
 const routes: Routes = [
   {
+    path: 'about',
+    loadChildren: './children/about/about.module#AboutModule'
+  },
+  {
     path: 'chart',
     loadChildren: './children/main/main.module#MainModule'
   },

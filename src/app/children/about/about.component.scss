@@ -1,0 +1,9 @@
+$b-img: url('../../../assets/img/about.jpg');
+
+.about-img {
+  background-image: $b-img;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #003399;
+}
