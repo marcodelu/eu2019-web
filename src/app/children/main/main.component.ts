@@ -21,7 +21,7 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.mostActiveContriesSubscription = timer(0, 5 * 60 * 1000)
+    this.mostActiveContriesSubscription = timer(0, 60 * 1000)
       .subscribe(() => {
         this.dataService.getMostActiveCountries()
           .subscribe(res => {

@@ -1,4 +1,18 @@
-$b-img: url('../../../assets/img/about.jpg');
+$b-img: url('../../../assets/img/about.png');
+@import "~src/app/core/scss/partial/material-theme";
+
+.about-big-div {
+  padding: 80px 50px;
+  background: mat-color($app-primary);
+  color: mat-color($app-accent);
+  text-align: end;
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+  }
+}
 
 .about-img {
   background-image: $b-img;
@@ -6,4 +20,13 @@ $b-img: url('../../../assets/img/about.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #003399;
+}
+
+.about-text-div {
+  background-color: rgb(245, 245, 245);
+  padding: 50px;
+
+  p {
+    margin-bottom: 3rem;
+  }
 }
