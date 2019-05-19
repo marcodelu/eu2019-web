@@ -10,48 +10,54 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div class="main-container" fxFlex fxLayout="column" fxLayoutGap="24px">
+  <div class="main-container" fxFlex fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="24px" style="overflow: scroll">
 
-    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
-      <mat-card class="stats-card" fxFlex fxLayout="row" fxLayoutAlign="center center">
-        <mat-icon svgIcon="twitter"></mat-icon>
-        <span fxFlex>&nbsp; Tweets</span>
-        <span>{{totalTweets | number}}</span>
-      </mat-card>
+    <!--    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">-->
+    <!--      <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">-->
+    <!--        <mat-icon svgIcon="twitter"></mat-icon>-->
+    <!--        <span fxFlex>&nbsp; Tweets</span>-->
+    <!--        <span>{{totalTweets | number}}</span>-->
+    <!--      </mat-card>-->
 
-      <mat-card class="stats-card" fxFlex fxLayout="row" fxLayoutAlign="center center">
-        <mat-icon>refresh</mat-icon>
-        <span fxFlex>&nbsp; Last update</span>
-        <span>{{lastUpdate | date:'short'}}</span>
-      </mat-card>
+    <!--      <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">-->
+    <!--        <mat-icon>refresh</mat-icon>-->
+    <!--        <span fxFlex>&nbsp; Last update</span>-->
+    <!--        <span>{{lastUpdate | date:'short'}}</span>-->
+    <!--      </mat-card>-->
 
-      <mat-card class="stats-card" fxFlex fxLayout="row" fxLayoutAlign="center center">
-        <mat-icon>date_range</mat-icon>
-        <span fxFlex>&nbsp; Elections</span>
-        <span>- 8 days</span>
-      </mat-card>
+    <!--      <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">-->
+    <!--        <mat-icon>date_range</mat-icon>-->
+    <!--        <span fxFlex>&nbsp; Elections</span>-->
+    <!--        <span>- 8 days</span>-->
+    <!--      </mat-card>-->
+    <!--    </div>-->
+
+    <!--    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">-->
+    <!--      <mat-card fxFlex.gt-sm="50" fxLayout="column">-->
+    <!--        <mat-card-header>-->
+    <!--          <mat-card-title># of tweets per country</mat-card-title>-->
+    <!--        </mat-card-header>-->
+    <!--        <mat-card-content>-->
+    <!--          <app-chart-most-active-countries [data]="mostActiveContriesData"></app-chart-most-active-countries>-->
+    <!--        </mat-card-content>-->
+    <!--      </mat-card>-->
+
+    <!--      <mat-card fxFlex.gt-sm="50" fxLayout="column">-->
+    <!--        <mat-card-header>-->
+    <!--          <mat-card-title># of tweets per day</mat-card-title>-->
+    <!--        </mat-card-header>-->
+    <!--        <mat-card-content>-->
+    <!--          <app-chart-per-days [data]="days"></app-chart-per-days>-->
+    <!--        </mat-card-content>-->
+    <!--      </mat-card>-->
+    <!--    </div>-->
+
+    <div>
+      <app-chart-map></app-chart-map>
     </div>
 
-    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px">
-      <mat-card fxFlex="50" fxLayout="column">
-        <mat-card-header>
-          <mat-card-title># of tweets per country</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-chart-most-active-countries [data]="mostActiveContriesData"></app-chart-most-active-countries>
-        </mat-card-content>
-      </mat-card>
+    <footer>made with ❤️ from Tilburg</footer>
 
-      <mat-card fxFlex="50" fxLayout="column">
-        <mat-card-header>
-          <mat-card-title># of tweets per day</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <app-chart-per-days [data]="days"></app-chart-per-days>
-        </mat-card-content>
-      </mat-card>
-    </div>
   </div>
 
-  <footer>made with ❤️from Tilburg</footer>
 </div>

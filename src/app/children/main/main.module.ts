@@ -9,6 +9,7 @@ import {SharedModule} from '../../core/shared.module';
 import {ChartMostActiveCountriesComponent} from './component/chart-most-active-countries/chart-most-active-countries.component';
 import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.component';
 import {MainComponent} from './main.component';
+import { ChartMapComponent } from './component/chart-map/chart-map.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
   declarations: [
     MainComponent,
     ChartMostActiveCountriesComponent,
-    ChartPerDaysComponent
+    ChartPerDaysComponent,
+    ChartMapComponent
   ],
   imports: [
     SharedModule,
