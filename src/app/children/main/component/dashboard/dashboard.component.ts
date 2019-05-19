@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {timer} from 'rxjs';
 import {DataService} from '../../../../core/service/data.service';
+import {MostActiveLanguage} from '../chart-most-active-countries/chart-most-active-languages.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   mostActiveLanguagesSubscription = null;
 
-  mostActiveLanguagesData = [];
+  mostActiveLanguagesData: MostActiveLanguage[] = [];
   totalTweets = 0;
   lastUpdate = Date();
 

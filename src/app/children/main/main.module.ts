@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import {ChartsModule} from 'ng2-charts';
 import {ChartService} from '../../core/service/chart.service';
@@ -40,12 +40,13 @@ const routes: Routes = [
   imports: [
     SharedModule,
     RouterModule.forChild(routes),
+    ChartsModule,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule,
     MatToolbarModule,
     MatTooltipModule,
     MatCardModule,
-    ChartsModule
   ],
   providers: [
     HttpService,

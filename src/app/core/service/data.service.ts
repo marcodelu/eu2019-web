@@ -26,4 +26,8 @@ export class DataService {
         })
       );
   }
+
+  getTopics() {
+    return this.httpService.get('/exported_tweets_topics.json');
+  }
 }
