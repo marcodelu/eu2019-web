@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header fxLayout="row">
+    <mat-card-title>
+      Parties per country
+    </mat-card-title>
+    <span fxFlex></span>
+    <button mat-button [matMenuTriggerFor]="menu" color="primary">
+      {{menuSelected.state}}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item disabled>Select a country...</button>
+      <ng-container *ngFor="let value of menuValues;">
+        <button mat-menu-item (click)="menuButtonClick(value)">{{value.state}}</button>
+      </ng-container>
+    </mat-menu>
+  </mat-card-header>
+  <mat-card-content fxLayout="column" fxLayout.gt-sm="row">
+    <div fxFlex>
+      <div style="display: block">
+        <canvas baseChart
+                height="600px"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="'horizontalBar'">
+        </canvas>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
