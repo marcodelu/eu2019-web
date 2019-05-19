@@ -1,42 +1,42 @@
 [
   {
-    "country": "it",
+    "countryCode": "it",
     "value": 1
   },
   {
-    "country": "no",
+    "countryCode": "no",
     "value": 1
   },
   {
-    "country": "nl",
+    "countryCode": "nl",
     "value": 3
   },
   {
-    "country": "und",
+    "countryCode": "und",
     "value": 12
   },
   {
-    "country": "el",
+    "countryCode": "el",
     "value": 1
   },
   {
-    "country": "en",
+    "countryCode": "en",
     "value": 53
   },
   {
-    "country": "cs",
+    "countryCode": "cs",
     "value": 3
   },
   {
-    "country": "sv",
+    "countryCode": "sv",
     "value": 2
   },
   {
-    "country": "es",
+    "countryCode": "es",
     "value": 3
   },
   {
-    "country": "fr",
+    "countryCode": "fr",
     "value": 13
   }
 ]

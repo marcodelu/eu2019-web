@@ -6,15 +6,22 @@ import {ChartService} from '../../core/service/chart.service';
 import {DataService} from '../../core/service/data.service';
 import {HttpService} from '../../core/service/http.service';
 import {SharedModule} from '../../core/shared.module';
-import {ChartMostActiveCountriesComponent} from './component/chart-most-active-countries/chart-most-active-countries.component';
+import {ChartMapComponent} from './component/chart-map/chart-map.component';
+import {ChartMostActiveLanguagesComponent} from './component/chart-most-active-countries/chart-most-active-languages.component';
 import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.component';
+import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {MainComponent} from './main.component';
-import { ChartMapComponent } from './component/chart-map/chart-map.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        component: DashboardComponent
+      }
+    ]
   },
   {
     path: '**',
@@ -25,9 +32,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     MainComponent,
-    ChartMostActiveCountriesComponent,
+    ChartMostActiveLanguagesComponent,
     ChartPerDaysComponent,
-    ChartMapComponent
+    ChartMapComponent,
+    DashboardComponent
   ],
   imports: [
     SharedModule,

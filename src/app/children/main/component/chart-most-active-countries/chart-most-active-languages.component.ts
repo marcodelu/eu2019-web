@@ -3,19 +3,19 @@ import {ChartOptions} from 'chart.js';
 import {Label} from 'ng2-charts';
 import {ChartService} from '../../../../core/service/chart.service';
 
-export interface MostActiveCountry {
-  country: string;
+export interface MostActiveLanguage {
+  lang: string;
   value: number;
 }
 
 @Component({
-  selector: 'app-chart-most-active-countries',
-  templateUrl: './chart-most-active-countries.component.html',
-  styleUrls: ['./chart-most-active-countries.component.scss']
+  selector: 'app-chart-most-active-languages',
+  templateUrl: './chart-most-active-languages.component.html',
+  styleUrls: ['./chart-most-active-languages.component.scss']
 })
-export class ChartMostActiveCountriesComponent implements OnInit, OnChanges {
+export class ChartMostActiveLanguagesComponent implements OnInit, OnChanges {
 
-  @Input() data: [MostActiveCountry];
+  @Input() data: [MostActiveLanguage];
 
   public pieChartOptions: ChartOptions;
   public pieChartLabels: Label[] = [];
@@ -52,7 +52,7 @@ export class ChartMostActiveCountriesComponent implements OnInit, OnChanges {
 
   parseData() {
     this.pieChartLabels.length = 0;
-    this.pieChartLabels.push(...this.data.map(label => label.country));
+    this.pieChartLabels.push(...this.data.map(label => label.lang));
     this.pieChartData.length = 0;
     this.pieChartData.push(...this.data.map(label => label.value));
   }

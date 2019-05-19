@@ -5,12 +5,8 @@ mat-toolbar {
   }
 }
 
-.main-container {
+#main-container {
   padding: 24px;
-
-  .stats-card {
-    min-height: 60px;
-  }
 }
 
 footer {
@@ -19,20 +15,3 @@ footer {
   color: rgba(0, 0, 0, .58);
 }
 
-.mat-card {
-  box-shadow: none;
-
-  border: 1px solid rgba(0, 0, 0, .12);
-
-  mat-icon {
-    color: #003399;
-
-    svg {
-      fill: #003399;
-    }
-
-    svg path {
-      fill: #003399;
-    }
-  }
-}

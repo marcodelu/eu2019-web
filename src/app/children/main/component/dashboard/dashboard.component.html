@@ -1,0 +1,57 @@
+<div id="dashboard-container" fxLayout="column" fxLayoutGap="24px" fxLayoutAlign="start stretch">
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
+    <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon svgIcon="twitter"></mat-icon>
+      <span fxFlex>&nbsp; Tweets</span>
+      <span>{{totalTweets | number}}</span>
+    </mat-card>
+
+    <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon>refresh</mat-icon>
+      <span fxFlex>&nbsp; Last update</span>
+      <span>{{lastUpdate | date:'short'}}</span>
+    </mat-card>
+
+    <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon>date_range</mat-icon>
+      <span fxFlex>&nbsp; Elections</span>
+      <span>- 8 days</span>
+    </mat-card>
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
+    <mat-card fxFlex fxLayout="column">
+      <mat-card-header>
+        <mat-card-title># of tweets per day</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-chart-per-days [data]="days"></app-chart-per-days>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
+    <mat-card fxFlex.gt-sm="50" fxLayout="column">
+      <mat-card-header>
+        <mat-card-title># of tweets per language</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-chart-most-active-languages [data]="mostActiveLanguagesData"></app-chart-most-active-languages>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
+    <mat-card fxFlex fxLayout="column">
+      <mat-card-header>
+        <mat-card-title>Tweets per topic</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-chart-map></app-chart-map>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+
