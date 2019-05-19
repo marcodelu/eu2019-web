@@ -12,6 +12,7 @@ import {ChartMostActiveLanguagesComponent} from './component/chart-most-active-c
 import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {MainComponent} from './main.component';
+import { ChartPartiesComponent } from './component/chart-parties/chart-parties.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,8 @@ const routes: Routes = [
     ChartMostActiveLanguagesComponent,
     ChartPerDaysComponent,
     ChartMapComponent,
-    DashboardComponent
+    DashboardComponent,
+    ChartPartiesComponent
   ],
   imports: [
     SharedModule,

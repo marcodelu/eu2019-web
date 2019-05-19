@@ -25,12 +25,27 @@
   </div>
 
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
+    <app-chart-parties fxFlex></app-chart-parties>
+  </div>
+
+  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
     <mat-card fxFlex.gt-sm="50" fxLayout="column">
       <mat-card-header>
         <mat-card-title># of tweets per language</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <app-chart-most-active-languages [data]="mostActiveLanguagesData"></app-chart-most-active-languages>
+      </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex.gt-sm="50" fxLayout="column" style="min-height: 400px;">
+      <mat-card-header>
+        <mat-card-title>Coming soon...</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxFlex fxLayoutAlign="center center" style="padding: 24px;">
+        <p style="font-size: 24px; text-align: center">
+          Hey there! We are working hard on more charts and insights. <br>
+          In the meanwhile, learn more about this project <a routerLink="/about">here</a>!
+        </p>
       </mat-card-content>
     </mat-card>
   </div>

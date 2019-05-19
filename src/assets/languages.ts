@@ -1,4 +1,11 @@
-export let languages = [
+export interface languageItem {
+  langCode: string;
+  countryCode: string;
+  state: string;
+  language: string;
+}
+
+export let languages: languageItem[] = [
   {langCode: 'de', countryCode: 'at', state: 'Austria', language: 'German'},
   {langCode: 'nl', countryCode: 'be', state: 'Belgium', language: 'Dutch'},
   {langCode: 'bg', countryCode: 'bg', state: 'Bulgaria', language: 'Bulgarian'},

@@ -30,4 +30,8 @@ export class DataService {
   getTopics() {
     return this.httpService.get('/exported_tweets_topics.json');
   }
+
+  getParties() {
+    return this.httpService.get('/exported_tweets_parties.json');
+  }
 }

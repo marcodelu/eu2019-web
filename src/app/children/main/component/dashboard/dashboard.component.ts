@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {timer} from 'rxjs';
 import {DataService} from '../../../../core/service/data.service';
 import {MostActiveLanguage} from '../chart-most-active-countries/chart-most-active-languages.component';
+import {Parties} from '../chart-parties/chart-parties.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +12,10 @@ import {MostActiveLanguage} from '../chart-most-active-countries/chart-most-acti
 export class DashboardComponent implements OnInit, OnDestroy {
 
   mostActiveLanguagesSubscription = null;
+  mostActivePartiesSubscription = null;
 
   mostActiveLanguagesData: MostActiveLanguage[] = [];
+  mostActivePartiesData: Parties[] = [];
   totalTweets = 0;
   lastUpdate = Date();
 
@@ -33,6 +36,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
           });
       });
 
+    this.mostActivePartiesSubscription = timer(0, 60 * 1000)
+      .subscribe(() => {
+        this.dataService.getParties()
+          .subscribe(res => {
+            this.mostActivePartiesData = res;
+          });
+      });
+
     // this.httpService.get('/exported_tweets_countries.json').subscribe((res: MostActiveLanguage[]) => {
     //   this.mostActiveLanguagesData = res.map(i => {
     //     const name = this.languages.find(lang => lang.code === i.countryCode.toLowerCase()).name;
@@ -49,6 +60,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.mostActiveLanguagesSubscription) {
       this.mostActiveLanguagesSubscription.unsubscribe();
+    }
+
+    if (this.mostActivePartiesSubscription) {
+      this.mostActivePartiesSubscription.unsubscribe();
     }
   }
 

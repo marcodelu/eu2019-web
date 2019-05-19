@@ -29,4 +29,25 @@ $b-img: url('../../../assets/img/about.png');
   p {
     margin-bottom: 3rem;
   }
+
+  button {
+    margin-bottom: 40px;
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: mat-color($app-primary);
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
 }

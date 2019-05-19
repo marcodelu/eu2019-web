@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {WorkInProgressComponent} from './children/work-in-progress/work-in-progress.component';
 
 const routes: Routes = [
   {
@@ -8,13 +7,13 @@ const routes: Routes = [
     loadChildren: './children/about/about.module#AboutModule'
   },
   {
-    path: 'chart',
+    path: '',
     loadChildren: './children/main/main.module#MainModule'
   },
-  {
-    path: '',
-    component: WorkInProgressComponent
-  },
+  // {
+  //   path: '',
+  //   component: WorkInProgressComponent
+  // },
   {
     path: '**',
     redirectTo: ''
