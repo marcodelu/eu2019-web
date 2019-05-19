@@ -1,3 +1,4 @@
+import {DecimalPipe} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
@@ -51,7 +52,8 @@ const routes: Routes = [
   providers: [
     HttpService,
     DataService,
-    ChartService
+    ChartService,
+    DecimalPipe
   ]
 })
 export class MainModule {

@@ -23,5 +23,10 @@ body {
         fill: mat-color($app-primary);
       }
     }
+
+    mat-card-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      margin-bottom: 10px;
+    }
   }
 }

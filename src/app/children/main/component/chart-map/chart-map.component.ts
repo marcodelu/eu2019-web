@@ -1,6 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ChartOptions} from 'chart.js';
 import {BaseType, select, Selection} from 'd3-selection';
+import {Label} from 'ng2-charts';
 import {timer} from 'rxjs';
+import {ChartService} from '../../../../core/service/chart.service';
 import {DataService} from '../../../../core/service/data.service';
 
 export interface Topic {
@@ -27,11 +30,53 @@ export class ChartMapComponent implements OnInit {
 
   svg: Selection<BaseType, {}, HTMLElement, any>;
 
-  constructor(private dataService: DataService) {
+  public barChartLabels: Label[] = [];
+  public barChartLegend = true;
+  public barChartPlugins = [];
+  public barChartOptions: ChartOptions;
+  public barChartData: any[] = [
+    {data: [], label: '', backgroundColor: 'rgba(255, 65, 12, 1)'}
+  ];
+
+  constructor(private chartService: ChartService,
+              private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.topicsSubscription = timer(0, 600000 * 1000)
+    this.barChartOptions = this.chartService.getOptions();
+    this.barChartOptions.legend.display = false;
+    this.barChartOptions.showLines = false;
+    this.barChartOptions.scales = {
+      xAxes: [
+        {
+          display: false,
+          ticks: {
+            min: 0,
+            suggestedMin: 0,
+            max: 100,
+            suggestedMax: 100,
+            beginAtZero: true,
+            stepSize: 10
+          }
+        }
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            color: 'rgba(0, 0, 0, 0)'
+          },
+          display: true
+        }
+      ]
+    };
+    this.barChartOptions.tooltips.callbacks = {
+      label(tooltipItem: Chart.ChartTooltipItem, data: Chart.ChartData): string | string[] {
+        return ' ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+      }
+    };
+    // this.barChartOptions.scales.display = false;
+
+    this.topicsSubscription = timer(0, 60 * 1000)
       .subscribe(() => {
         this.dataService.getTopics()
           .subscribe((res: Topic[]) => {
@@ -65,7 +110,7 @@ export class ChartMapComponent implements OnInit {
     topicAllLanguages.forEach(topic => {
       const countryTopics = this.topicsData.filter(t => t.lang === topic.lang);
       const countryTopicsSum = countryTopics.map(i => i.value).reduce((a, b) => a + b);
-      const topicPercentage = topic.value / countryTopicsSum;
+      const topicPercentage: number = topic.value / countryTopicsSum;
 
       const level = Number.isNaN(Math.floor(topicPercentage / 0.10)) ? 0 : Math.floor(topicPercentage / 0.10);
 
@@ -73,7 +118,12 @@ export class ChartMapComponent implements OnInit {
 
       countryWithLanguage.forEach(country => {
         this.svg.select('#state-' + country.countryCode).classed('level-' + (level + 1), true);
+        this.barChartLabels.push(country.state);
+
+        this.barChartData[0].data.push(Math.floor(topicPercentage * 100));
+        this.barChartData[0].label = this.menuValues[this.menuSelected];
       });
+
     });
   }
 
@@ -92,6 +142,10 @@ export class ChartMapComponent implements OnInit {
       .classed('level-9', false)
       .classed('level-10', false)
       .classed('level-11', false);
+
+    this.barChartLabels.length = 0;
+    this.barChartData.length = 0;
+    this.barChartData.push({data: [], label: '', backgroundColor: 'rgba(255, 65, 12, 1)'});
   }
 
   menuButtonClick(index: number) {
