@@ -4,3 +4,24 @@ body {
   background-color: rgb(245, 245, 245);
   font-family: 'Montserrat', sans-serif;
 }
+
+#dashboard-container {
+
+  .mat-card {
+    box-shadow: none;
+
+    border: 1px solid rgba(0, 0, 0, .12);
+
+    mat-icon {
+      color: mat-color($app-primary);
+
+      svg {
+        fill: mat-color($app-primary);
+      }
+
+      svg path {
+        fill: mat-color($app-primary);
+      }
+    }
+  }
+}

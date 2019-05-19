@@ -3,7 +3,7 @@
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
     <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
       <mat-icon svgIcon="twitter"></mat-icon>
-      <span fxFlex>&nbsp; Tweets</span>
+      <span fxFlex>&nbsp; Analyzed tweets</span>
       <span>{{totalTweets | number}}</span>
     </mat-card>
 
@@ -21,17 +21,8 @@
   </div>
 
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
-    <mat-card fxFlex fxLayout="column">
-      <mat-card-header>
-        <mat-card-title># of tweets per day</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <app-chart-per-days [data]="days"></app-chart-per-days>
-      </mat-card-content>
-    </mat-card>
-  </div>
+    <app-chart-map fxFlex="50"></app-chart-map>
 
-  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
     <mat-card fxFlex.gt-sm="50" fxLayout="column">
       <mat-card-header>
         <mat-card-title># of tweets per language</mat-card-title>
@@ -42,9 +33,21 @@
     </mat-card>
   </div>
 
-  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
-    <app-chart-map fxFlex="50"></app-chart-map>
-  </div>
+  <div fxFlex></div>
+  <!--  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">-->
+
+  <!--  </div>-->
+
+  <!--  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">-->
+  <!--    <mat-card fxFlex fxLayout="column">-->
+  <!--      <mat-card-header>-->
+  <!--        <mat-card-title># of tweets per day</mat-card-title>-->
+  <!--      </mat-card-header>-->
+  <!--      <mat-card-content>-->
+  <!--        <app-chart-per-days [data]="days"></app-chart-per-days>-->
+  <!--      </mat-card-content>-->
+  <!--    </mat-card>-->
+  <!--  </div>-->
 
 </div>
 
