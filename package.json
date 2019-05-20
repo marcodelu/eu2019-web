@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-net": "ng serve --host 192.168.1.102",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

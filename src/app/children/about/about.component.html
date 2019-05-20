@@ -1,11 +1,9 @@
-<div fxFill fxLayout="column">
+<div>
 
-  <div fxFill class="about-big-div" fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="50px">
-    <div class="about-title" fxFlex fxFlex.gt-sm="50" fxLayout="column" fxLayoutAlign="start right">
-      <div>
-        <img src="assets/logo.png" height="80px" alt="" routerLink="/" style="cursor: pointer">
-      </div>
-      <div fxFlex fxLayout="column" fxLayoutAlign="center right" fxLayoutAlign.gt-sm="center center">
+  <div>
+    <div class="about-big-div" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center">
+      <div class="about-title" fxFlex.gt-sm="50">
+        <img class="logo" src="assets/logo.png" alt="" routerLink="/" style="cursor: pointer">
         <p>
           Explore Twitter data <br>
           on the current <br>
@@ -13,11 +11,16 @@
           in real time.
         </p>
       </div>
+      <div fxFlex.gt-sm="50" class="about-img-container">
+        <img class="about-img" src="assets/img/about.png">
+      </div>
     </div>
-    <div class="about-img" fxFlex fxFlex.gt-sm="50"></div>
+    <!--    <section id="section04" class="demo">-->
+    <!--      <a href="#section05"><span></span>Scroll</a>-->
+    <!--    </section>-->
   </div>
 
-  <div fxFill id="about-text-div" class="about-text-div" fxLayout="column" style="overflow: visible">
+  <div id="about-text-div" class="about-text-div" style="overflow: visible">
     <h1>About the project</h1>
     <p>
       This tool visualizes data at the aggregate level from tweets on the current European Elections and allows anyone to explore
@@ -26,7 +29,7 @@
       The data is based on a sample of all Tweets, and automatically updated approximately every 15 minutes. There is no need to refresh the
       page. <br> <br>
       This project is developed by <a href="https://linkedin.com/in/andreantonacci/">Andrea Antonacci</a> (Master of Science student in
-      Marketing Management at Tilburg University), <a href="https://www.linkedin.com/in/marcodelucchi/">Marco De Lucchi</a> (Web developer),
+      Marketing Management at Tilburg University), <a href="https://marcodelucchi.com">Marco De Lucchi</a> (Web developer),
       and mentored by <a href="https://www.tilburguniversity.edu/staff/h-datta">Hannes Datta</a> (Associate Professor at Tilburg
       University). Special thanks go to Enrico Giulini for his helpful contribution, and to faculty at Tilburg University for providing
       feedback. <br>
