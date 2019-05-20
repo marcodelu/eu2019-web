@@ -1,10 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {TermsComponent} from './children/terms/terms.component';
 
 const routes: Routes = [
   {
     path: 'about',
     loadChildren: './children/about/about.module#AboutModule'
+  },
+  {
+    path: 'terms',
+    component: TermsComponent
   },
   {
     path: '',
