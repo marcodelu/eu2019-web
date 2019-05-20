@@ -27,6 +27,10 @@ export class DataService {
       );
   }
 
+  getMostActiveParties() {
+    return this.httpService.get('/exported_tweets_epgroups.json');
+  }
+
   getTopics() {
     return this.httpService.get('/exported_tweets_topics.json');
   }

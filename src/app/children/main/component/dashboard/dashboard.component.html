@@ -20,12 +20,6 @@
     </mat-card>
   </div>
 
-  <!--  <mat-card>-->
-  <!--    <div>This tool visualizes data at the aggregate level from tweets on the ongoing European Elections. Click or hover the charts to see-->
-  <!--      the figures. You can also select countries or topics by the dropdown menu. Find out more here.-->
-  <!--    </div>-->
-  <!--  </mat-card>-->
-
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
     <app-chart-map fxFlex></app-chart-map>
   </div>
@@ -43,17 +37,25 @@
         <app-chart-most-active-languages [data]="mostActiveLanguagesData"></app-chart-most-active-languages>
       </mat-card-content>
     </mat-card>
-    <mat-card fxFlex.gt-sm="50" fxLayout="column" style="min-height: 400px;">
+    <mat-card fxFlex.gt-sm="50" fxLayout="column">
       <mat-card-header>
-        <mat-card-title>Coming soon...</mat-card-title>
+        <mat-card-title>Tweets per political groups</mat-card-title>
       </mat-card-header>
-      <mat-card-content fxFlex fxLayoutAlign="center center" style="padding: 24px;">
-        <p style="font-size: 24px; text-align: center">
-          Hey there! We are working hard on more charts and insights. <br>
-          In the meanwhile, learn more about this project <a routerLink="/about">here</a>!
-        </p>
+      <mat-card-content>
+        <app-chart-most-active-parties [data]="mostActivePartiesData"></app-chart-most-active-parties>
       </mat-card-content>
     </mat-card>
+    <!--    <mat-card fxFlex.gt-sm="50" fxLayout="column" style="min-height: 400px;">-->
+    <!--      <mat-card-header>-->
+    <!--        <mat-card-title>Coming soon...</mat-card-title>-->
+    <!--      </mat-card-header>-->
+    <!--      <mat-card-content fxFlex fxLayoutAlign="center center" style="padding: 24px;">-->
+    <!--        <p style="font-size: 24px; text-align: center">-->
+    <!--          Hey there! We are working hard on more charts and insights. <br>-->
+    <!--          In the meanwhile, learn more about this project <a routerLink="/about">here</a>!-->
+    <!--        </p>-->
+    <!--      </mat-card-content>-->
+    <!--    </mat-card>-->
   </div>
 
   <div fxFlex></div>

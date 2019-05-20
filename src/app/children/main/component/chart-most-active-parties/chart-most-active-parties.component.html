@@ -1,3 +1,12 @@
-<p>
-  chart-most-active-parties works!
-</p>
+<div fxFill>
+  <canvas baseChart
+          height="500"
+          [chartType]="'pie'"
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend"
+          [colors]="pieColors">
+  </canvas>
+</div>

@@ -9,10 +9,11 @@ import {HttpService} from '../../core/service/http.service';
 import {SharedModule} from '../../core/shared.module';
 import {ChartMapComponent} from './component/chart-map/chart-map.component';
 import {ChartMostActiveLanguagesComponent} from './component/chart-most-active-languages/chart-most-active-languages.component';
+import {ChartMostActivePartiesComponent} from './component/chart-most-active-parties/chart-most-active-parties.component';
+import {ChartPartiesComponent} from './component/chart-parties/chart-parties.component';
 import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {MainComponent} from './main.component';
-import { ChartPartiesComponent } from './component/chart-parties/chart-parties.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,8 @@ const routes: Routes = [
     ChartPerDaysComponent,
     ChartMapComponent,
     DashboardComponent,
-    ChartPartiesComponent
+    ChartPartiesComponent,
+    ChartMostActivePartiesComponent
   ],
   imports: [
     SharedModule,
@@ -49,7 +51,7 @@ const routes: Routes = [
     MatMenuModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatCardModule,
+    MatCardModule
   ],
   providers: [
     HttpService,
