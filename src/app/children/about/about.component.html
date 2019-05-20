@@ -5,7 +5,7 @@
       <div>
         <img src="assets/logo.png" height="80px" alt="" routerLink="/" style="cursor: pointer">
       </div>
-      <div fxFlex fxLayout="column" fxLayoutAlign="center right">
+      <div fxFlex fxLayout="column" fxLayoutAlign="center right" fxLayoutAlign.gt-sm="center center">
         <p>
           Explore Twitter data <br>
           on the current <br>
@@ -17,54 +17,71 @@
     <div class="about-img" fxFlex fxFlex.gt-sm="50"></div>
   </div>
 
-  <div fxFill id="about-text-div" class="about-text-div" fxLayout="column">
+  <div fxFill id="about-text-div" class="about-text-div" fxLayout="column" style="overflow: visible">
     <h1>About the project</h1>
-    <p>This tool visualizes data at aggregate level from tweets on the current European Elections and allows anyone to explore
+    <p>
+      This tool visualizes data at the aggregate level from tweets on the current European Elections and allows anyone to explore
       (dis)similarities between countries on political orientation, as well as the relative share of voice on many hot topics around Europe!
-      <br>
-      Many new charts and insights are currently under development — check back soon! <br>
-      Data is automatically updated approximately every 15 minutes, so there is no need to refresh the page.<br> <br>
-      This project is developed by <a href="https://linkedin.com/in/andreantonacci/">Andrea Antonacci</a> (postgraduate at Tilburg
-      University), <a href="https://www.linkedin.com/in/marcodelucchi/">Marco De Lucchi</a> (web developer), and supported by
-      <a href="https://www.tilburguniversity.edu/staff/h-datta">Hannes Datta</a> (Associate Professor at Tilburg Univerisity). A special
-      thank is
-      reserved to Enrico Giulini for his helpful contribution.
-      The project is funded with contributions from Tilburg University.
+      Many new charts and insights are currently under development — check back frequently!
+      The data is based on a sample of all Tweets, and automatically updated approximately every 15 minutes. There is no need to refresh the
+      page. <br> <br>
+      This project is developed by <a href="https://linkedin.com/in/andreantonacci/">Andrea Antonacci</a> (Master of Science student in
+      Marketing Management at Tilburg University), <a href="https://www.linkedin.com/in/marcodelucchi/">Marco De Lucchi</a> (Web developer),
+      and mentored by <a href="https://www.tilburguniversity.edu/staff/h-datta">Hannes Datta</a> (Associate Professor at Tilburg
+      University). Special thanks go to Enrico Giulini for his helpful contribution, and to faculty at Tilburg University for providing
+      feedback. <br>
+      The project’s infrastructure is supported with research funds from Tilburg University in the interest of encouraging
+      entrepreneurship among students, and to generate a large body of data for students’ to write their Master theses on.
     </p>
 
     <h1>Methodology</h1>
-    We track approximately 800 different keywords from the current stream of tweets via Twitter Realtime API. These includes:
+    The collection of data started on 5/16/2019 at 12:50:00 UTC. <br>
+    We track approximately 800 different keywords from the current stream of tweets via Twitter Realtime API. These include:
     <ul>
-      <li>general hashtags on the elections (in all the different languages spoken in the EU): e.g., #EUElections, #EUvaalit2019, #EP2019,
+      <li>
+        general hashtags on the elections (in all the different languages spoken in the EU): e.g., #EUElections, #EUvaalit2019, #EP2019,
         etc.
       </li>
-      <li>all the European Parliament groups’ usernames and official hashtags: e.g., @ALDE, #ALDE, @EPP, #EPP, etc.</li>
-      <li>all the major national parties’ usernames (having at least a seat in the national parliament): e.g., @groen, @PdA_Austria,
+      <li>
+        all the European Parliament groups’ usernames and official hashtags: e.g., @ALDE, #ALDE, @EPP, #EPP, etc.
+      </li>
+      <li>
+        all the major national parties’ usernames (having at least a seat in the national parliament): e.g., @groen, @PdA_Austria,
         @LegaSalvini, etc.
       </li>
-      <li>all the national party’s leaders usernames: e.g, @theresa_may, @luigidimaio, etc.</li>
-      <li>keywords on hot topics and challenges faced by the EU (in all the different languages spoken in the EU): e.g, migration, Brexit,
+      <li>
+        all the national party’s leaders’ usernames: e.g, @theresa_may, @luigidimaio, etc.
+      </li>
+      <li>
+        keywords on hot topics and challenges faced by the EU (in all the different languages spoken in the EU): e.g, migration, Brexit,
         single market, unemployment, etc.
       </li>
     </ul>
 
+    <p>
+      Our current set of keywords is available for download <a href="https://api.electionstats.eu/complete_hashtags.csv" target="_blank">here</a>
+    </p>
+
+
     <h1>Limitations</h1>
-    <p>Some charts may include data for only 21 countries. That is because we use the tweet language to infer the user nationality. <br>
-      Unfortunately, this is not appropriate for some countries where more than a language is spoken (e.g, Belgium), and thus we decided to
-      drop them in certain cases.
+    <p>In our data, we do not observe a user’s country of origin; we only observe the language of a Tweet, which we use as a proxy for a
+      user’s nationality. As languages do not directly correspond to countries (e.g., in some countries, multiple languages are spoken), we
+      have decided to drop the following countries in certain cases: Austria, Belgium, Republic of Cyprus, Ireland, Luxembourg, Malta.
     </p>
 
     <h1>Disclaimer</h1>
-    <p>The information contained in this website is for general information purposes only. While we endeavour to keep the information up to
-      date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy,
+    <p>The information contained in this website is for general information purposes only. While we endeavor to keep the information
+      up-to-date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy,
       reliability, suitability or availability with respect to the website or the information, services, or related graphics contained on
-      the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. <br>
+      the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.
+      <br>
       In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any
       loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.
     </p>
 
     <h1>Any questions?</h1>
-    <p>Feel free to reach us at _@_ with any question, feedback, suggestion, or if you believe we have misclassified any party.</p>
+    <p>Feel free to reach us at <a href="mailto:electionstats@uvt.nl">electionstats@uvt.nl</a> with any question, feedback, suggestion, or
+      if you believe we have misclassified any keyword.</p>
 
     <button mat-raised-button routerLink="/">Go Back</button>
   </div>
