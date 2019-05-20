@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {languages} from '../../../assets/languages';
-import {MostActiveLanguage} from '../../children/main/component/chart-most-active-countries/chart-most-active-languages.component';
+import {MostActiveLanguage} from '../../children/main/component/chart-most-active-languages/chart-most-active-languages.component';
 import {HttpService} from './http.service';
 
 @Injectable()

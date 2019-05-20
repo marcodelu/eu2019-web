@@ -1,8 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {timer} from 'rxjs';
 import {DataService} from '../../../../core/service/data.service';
-import {MostActiveLanguage} from '../chart-most-active-countries/chart-most-active-languages.component';
-import {Parties} from '../chart-parties/chart-parties.component';
+import {MostActiveLanguage} from '../chart-most-active-languages/chart-most-active-languages.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,14 +11,10 @@ import {Parties} from '../chart-parties/chart-parties.component';
 export class DashboardComponent implements OnInit, OnDestroy {
 
   mostActiveLanguagesSubscription = null;
-  mostActivePartiesSubscription = null;
-
   mostActiveLanguagesData: MostActiveLanguage[] = [];
-  mostActivePartiesData: Parties[] = [];
+
   totalTweets = 0;
   lastUpdate = Date();
-
-  days = [];
 
   constructor(private dataService: DataService) {
   }
@@ -35,35 +30,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
             this.lastUpdate = Date();
           });
       });
-
-    this.mostActivePartiesSubscription = timer(0, 60 * 1000)
-      .subscribe(() => {
-        this.dataService.getParties()
-          .subscribe(res => {
-            this.mostActivePartiesData = res;
-          });
-      });
-
-    // this.httpService.get('/exported_tweets_countries.json').subscribe((res: MostActiveLanguage[]) => {
-    //   this.mostActiveLanguagesData = res.map(i => {
-    //     const name = this.languages.find(lang => lang.code === i.countryCode.toLowerCase()).name;
-    //     i.countryCode = name ? name : i.countryCode;
-    //     return i;
-    //   }).sort((a, b) => a.countryCode > b.countryCode ? 1 : -1);
-    // });
-    //
-    // this.httpService.get('/exported_tweets_days.json').subscribe((res: any[]) => {
-    //   this.days = res;
-    // });
   }
 
   ngOnDestroy(): void {
     if (this.mostActiveLanguagesSubscription) {
       this.mostActiveLanguagesSubscription.unsubscribe();
-    }
-
-    if (this.mostActivePartiesSubscription) {
-      this.mostActivePartiesSubscription.unsubscribe();
     }
   }
 

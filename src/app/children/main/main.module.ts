@@ -8,7 +8,7 @@ import {DataService} from '../../core/service/data.service';
 import {HttpService} from '../../core/service/http.service';
 import {SharedModule} from '../../core/shared.module';
 import {ChartMapComponent} from './component/chart-map/chart-map.component';
-import {ChartMostActiveLanguagesComponent} from './component/chart-most-active-countries/chart-most-active-languages.component';
+import {ChartMostActiveLanguagesComponent} from './component/chart-most-active-languages/chart-most-active-languages.component';
 import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {MainComponent} from './main.component';

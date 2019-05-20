@@ -16,9 +16,15 @@
     <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
       <mat-icon>date_range</mat-icon>
       <span fxFlex>&nbsp; Elections</span>
-      <span>- 7 days</span>
+      <span>- 5 days</span>
     </mat-card>
   </div>
+
+  <!--  <mat-card>-->
+  <!--    <div>This tool visualizes data at the aggregate level from tweets on the ongoing European Elections. Click or hover the charts to see-->
+  <!--      the figures. You can also select countries or topics by the dropdown menu. Find out more here.-->
+  <!--    </div>-->
+  <!--  </mat-card>-->
 
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
     <app-chart-map fxFlex></app-chart-map>
@@ -31,7 +37,7 @@
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">
     <mat-card fxFlex.gt-sm="50" fxLayout="column">
       <mat-card-header>
-        <mat-card-title># of tweets per language</mat-card-title>
+        <mat-card-title>Tweets per language</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <app-chart-most-active-languages [data]="mostActiveLanguagesData"></app-chart-most-active-languages>
@@ -51,20 +57,5 @@
   </div>
 
   <div fxFlex></div>
-  <!--  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">-->
-
-  <!--  </div>-->
-
-  <!--  <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="24px" fxLayoutAlign="start stretch">-->
-  <!--    <mat-card fxFlex fxLayout="column">-->
-  <!--      <mat-card-header>-->
-  <!--        <mat-card-title># of tweets per day</mat-card-title>-->
-  <!--      </mat-card-header>-->
-  <!--      <mat-card-content>-->
-  <!--        <app-chart-per-days [data]="days"></app-chart-per-days>-->
-  <!--      </mat-card-content>-->
-  <!--    </mat-card>-->
-  <!--  </div>-->
-
 </div>
 

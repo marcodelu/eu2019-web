@@ -69,7 +69,8 @@
     <h1>Limitations</h1>
     <p>In our data, we do not observe a user’s country of origin; we only observe the language of a Tweet, which we use as a proxy for a
       user’s nationality. As languages do not directly correspond to countries (e.g., in some countries, multiple languages are spoken), we
-      have decided to drop the following countries in certain cases: Austria, Belgium, Republic of Cyprus, Ireland, Luxembourg, Malta.
+      have decided to drop the following countries in certain cases: Austria, Belgium, Republic of Cyprus, Ireland, Luxembourg, Malta. <br>
+      Instead, in some other charts, we aggregate countries speaking the same language (e.g., Austria and Germany).
     </p>
 
     <h1>Disclaimer</h1>
@@ -86,6 +87,8 @@
     <p>Feel free to reach us at <a href="mailto:rsm@uvt.nl">rsm@uvt.nl</a> with any question, feedback, suggestion, or
       if you believe we have misclassified any keyword.</p>
 
-    <button mat-raised-button routerLink="/">Go Back</button>
+    <div class="about-actions">
+      <button mat-raised-button routerLink="/">Go Back</button>
+    </div>
   </div>
 </div>
