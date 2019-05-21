@@ -10,12 +10,14 @@ import {WorkInProgressComponent} from './children/work-in-progress/work-in-progr
 import {HttpService} from './core/service/http.service';
 import {SplashScreenService} from './core/service/splash-screen.service';
 import {SharedModule} from './core/shared.module';
+import { PrivacyComponent } from './children/privacy/privacy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkInProgressComponent,
-    TermsComponent
+    TermsComponent,
+    PrivacyComponent
   ],
   imports: [
     SharedModule,

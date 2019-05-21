@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {PrivacyComponent} from './children/privacy/privacy.component';
 import {TermsComponent} from './children/terms/terms.component';
 
 const routes: Routes = [
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'terms',
     component: TermsComponent
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent
   },
   {
     path: '',

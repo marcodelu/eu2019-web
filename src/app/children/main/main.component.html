@@ -13,7 +13,11 @@
   <div id="main-container" fxFlex fxLayout="column" fxLayoutAlign="start stretch" style="overflow: scroll">
     <router-outlet #o="outlet"></router-outlet>
     <div fxFlex></div>
-    <footer>made with ❤ from Tilburg</footer>
+    <footer>
+      <span>made with ❤ from Tilburg</span>
+      <br>
+      <a routerLink="/terms">Terms</a> - <a routerLink="/privacy">Privacy policy</a>
+    </footer>
   </div>
 
 </div>
