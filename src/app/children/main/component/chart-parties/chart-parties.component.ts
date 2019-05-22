@@ -7,7 +7,8 @@ import {ChartService} from '../../../../core/service/chart.service';
 import {DataService} from '../../../../core/service/data.service';
 
 export interface Parties {
-  lang: string;
+  country: string;
+  language: string;
   party: string;
   value: 0;
 }
@@ -81,7 +82,7 @@ export class ChartPartiesComponent implements OnInit {
   }
 
   parseData() {
-    const filtredData = this.mostActivePartiesData.filter(d => d.lang === this.menuSelected.countryCode);
+    const filtredData = this.mostActivePartiesData.filter(d => d.country === this.menuSelected.countryCode);
 
     this.barChartLabels.length = 0;
     this.barChartData.length = 0;
