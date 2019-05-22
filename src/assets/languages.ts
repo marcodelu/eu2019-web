@@ -11,7 +11,7 @@ export let languages: languageItem[] = [
   {langCode: 'nl', countryCode: 'be', state: 'Belgium', language: 'Dutch', multilanguage: true},
   {langCode: 'bg', countryCode: 'bg', state: 'Bulgaria', language: 'Bulgarian', multilanguage: false},
   {langCode: 'hr', countryCode: 'hr', state: 'Croatia', language: 'Croatian', multilanguage: false},
-  {langCode: 'cs', countryCode: 'cz', state: 'Czech Republic', language: 'Czech', multilanguage: true},
+  {langCode: 'cs', countryCode: 'cz', state: 'Czech Republic', language: 'Czech', multilanguage: false},
   {langCode: 'da', countryCode: 'dk', state: 'Denmark', language: 'Danish', multilanguage: false},
   {langCode: 'et', countryCode: 'ee', state: 'Estonia', language: 'Estonian', multilanguage: false},
   {langCode: 'fi', countryCode: 'fi', state: 'Finland', language: 'Finnish', multilanguage: false},
