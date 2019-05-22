@@ -114,15 +114,20 @@ export class ChartMapComponent implements OnInit {
 
       const level = Number.isNaN(Math.floor(topicPercentage / 0.10)) ? 0 : Math.floor(topicPercentage / 0.10);
 
-      const countryWithLanguage = this.dataService.languages.filter(l => l.langCode === topic.lang);
+      const countryWithLanguage = this.dataService.languages.filter(l => l.langCode === topic.lang && l.multilanguage === false);
 
-      countryWithLanguage.forEach(country => {
-        this.svg.select('#state-' + country.countryCode).classed('level-' + (level + 1), true);
-        this.barChartLabels.push(country.state);
+      if (countryWithLanguage.length > 0) {
+
+        countryWithLanguage.forEach(country => {
+          this.svg.select('#state-' + country.countryCode).classed('level-' + (level + 1), true);
+        });
+
+        const label = countryWithLanguage.length > 1 ? countryWithLanguage.map(c => c.state).join(', ') : countryWithLanguage[0].state;
+        this.barChartLabels.push(label);
 
         this.barChartData[0].data.push(Math.floor(topicPercentage * 100));
         this.barChartData[0].label = this.menuValues[this.menuSelected];
-      });
+      }
 
     });
   }
