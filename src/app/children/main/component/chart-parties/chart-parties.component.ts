@@ -83,13 +83,23 @@ export class ChartPartiesComponent implements OnInit {
 
   parseData() {
     const filtredData = this.mostActivePartiesData.filter(d => d.country === this.menuSelected.countryCode);
+    const output: Parties[] = [];
+
+    filtredData.forEach((item) => {
+      const index = output.findIndex(o => o.party === item.party);
+      if (index > -1) {
+        output[index].value += item.value;
+      } else {
+        output.push(item);
+      }
+    });
 
     this.barChartLabels.length = 0;
     this.barChartData.length = 0;
     this.barChartData.push({data: [], label: '', backgroundColor: 'rgba(255, 65, 12, 1)'});
 
-    this.barChartLabels.push(...filtredData.map(d => d.party));
-    this.barChartData[0].data.push(...filtredData.map(d => d.value));
+    this.barChartLabels.push(...output.map(d => d.party));
+    this.barChartData[0].data.push(...output.map(d => d.value));
   }
 
   menuButtonClick(value) {
