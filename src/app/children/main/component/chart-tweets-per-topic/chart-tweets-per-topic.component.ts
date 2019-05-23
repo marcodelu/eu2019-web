@@ -13,12 +13,12 @@ export interface Topic {
 }
 
 @Component({
-  selector: 'app-chart-map',
-  templateUrl: './chart-map.component.html',
-  styleUrls: ['./chart-map.component.scss'],
+  selector: 'app-tweets-per-topic',
+  templateUrl: './chart-tweets-per-topic.component.html',
+  styleUrls: ['./chart-tweets-per-topic.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ChartMapComponent implements OnInit {
+export class ChartTweetsPerTopicComponent implements OnInit {
 
   topicsSubscription = null;
 

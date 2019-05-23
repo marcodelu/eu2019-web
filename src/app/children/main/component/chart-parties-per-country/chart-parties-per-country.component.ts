@@ -6,7 +6,7 @@ import {languageItem, languages} from '../../../../../assets/languages';
 import {ChartService} from '../../../../core/service/chart.service';
 import {DataService} from '../../../../core/service/data.service';
 
-export interface Parties {
+export interface Party {
   country: string;
   language: string;
   party: string;
@@ -14,14 +14,14 @@ export interface Parties {
 }
 
 @Component({
-  selector: 'app-chart-parties',
-  templateUrl: './chart-parties.component.html',
-  styleUrls: ['./chart-parties.component.scss']
+  selector: 'app-chart-parties-per-country',
+  templateUrl: './chart-parties-per-country.component.html',
+  styleUrls: ['./chart-parties-per-country.component.scss']
 })
-export class ChartPartiesComponent implements OnInit {
+export class ChartPartiesPerCountryComponent implements OnInit {
 
   mostActivePartiesSubscription = null;
-  mostActivePartiesData: Parties[] = [];
+  mostActivePartiesData: Party[] = [];
 
   public barChartLabels: Label[] = [];
   public barChartLegend = true;
@@ -83,7 +83,7 @@ export class ChartPartiesComponent implements OnInit {
 
   parseData() {
     const filtredData = this.mostActivePartiesData.filter(d => d.country === this.menuSelected.countryCode);
-    const output: Parties[] = [];
+    const output: Party[] = [];
 
     filtredData.forEach((item) => {
       const index = output.findIndex(o => o.party === item.party);

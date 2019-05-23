@@ -7,11 +7,11 @@ import {ChartService} from '../../core/service/chart.service';
 import {DataService} from '../../core/service/data.service';
 import {HttpService} from '../../core/service/http.service';
 import {SharedModule} from '../../core/shared.module';
-import {ChartMapComponent} from './component/chart-map/chart-map.component';
 import {ChartMostActiveLanguagesComponent} from './component/chart-most-active-languages/chart-most-active-languages.component';
 import {ChartMostActivePartiesComponent} from './component/chart-most-active-parties/chart-most-active-parties.component';
-import {ChartPartiesComponent} from './component/chart-parties/chart-parties.component';
+import {ChartPartiesPerCountryComponent} from './component/chart-parties-per-country/chart-parties-per-country.component';
 import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.component';
+import {ChartTweetsPerTopicComponent} from './component/chart-tweets-per-topic/chart-tweets-per-topic.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {MainComponent} from './main.component';
 
@@ -35,12 +35,13 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     MainComponent,
+    DashboardComponent,
     ChartMostActiveLanguagesComponent,
     ChartPerDaysComponent,
-    ChartMapComponent,
-    DashboardComponent,
-    ChartPartiesComponent,
-    ChartMostActivePartiesComponent
+    ChartTweetsPerTopicComponent,
+    ChartPartiesPerCountryComponent,
+    ChartMostActivePartiesComponent,
+    ChartPoliticalOrientationPerCountryComponent
   ],
   imports: [
     SharedModule,

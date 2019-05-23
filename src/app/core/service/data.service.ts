@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {combineLatest} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {languages} from '../../../assets/languages';
-import {Topic} from '../../children/main/component/chart-map/chart-map.component';
 import {MostActiveLanguage} from '../../children/main/component/chart-most-active-languages/chart-most-active-languages.component';
 import {MostActiveParty} from '../../children/main/component/chart-most-active-parties/chart-most-active-parties.component';
-import {Parties} from '../../children/main/component/chart-parties/chart-parties.component';
+import {Party} from '../../children/main/component/chart-parties-per-country/chart-parties-per-country.component';
+import {Topic} from '../../children/main/component/chart-tweets-per-topic/chart-tweets-per-topic.component';
 import {HttpService} from './http.service';
 
 @Injectable()
@@ -85,8 +85,8 @@ export class DataService {
       this.httpService.get('/exported_tweets_parties.json'),
       this.httpService.get('/exported_tweets_parties_history.json')
     ).pipe(
-      map(([currentData, historyData]: [Parties[], Parties[]]) => {
-        const result: Parties[] = [];
+      map(([currentData, historyData]: [Party[], Party[]]) => {
+        const result: Party[] = [];
 
         currentData.forEach((c, index) => {
           const historyValue = index < historyData.length ? historyData[index].value : 0;
