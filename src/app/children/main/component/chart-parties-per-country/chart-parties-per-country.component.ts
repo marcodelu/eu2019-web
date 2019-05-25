@@ -10,7 +10,7 @@ export interface Party {
   country: string;
   language: string;
   party: string;
-  value: 0;
+  value: number;
 }
 
 @Component({

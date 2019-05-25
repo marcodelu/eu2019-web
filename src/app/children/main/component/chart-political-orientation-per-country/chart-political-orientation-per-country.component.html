@@ -1,26 +1,16 @@
 <mat-card>
   <mat-card-header fxLayout="row">
     <mat-card-title>
-      Tweets per topic
+      Political orientation per country
     </mat-card-title>
     <span fxFlex></span>
-    <button mat-button [matMenuTriggerFor]="menu" color="primary">
-      {{menuValues[menuSelected]}}
-      <mat-icon>arrow_drop_down</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item disabled>Filter by topic...</button>
-      <ng-container *ngFor="let value of menuValues; let i = index">
-        <button mat-menu-item (click)="menuButtonClick(i)">{{value}}</button>
-      </ng-container>
-    </mat-menu>
   </mat-card-header>
   <div class="notes">
     <span>This chart shows the share of voice of the selected topic within countries. You can filter by topic using the dropdown menu on the right. Click or hover on the bar chart to see the figures.</span>
   </div>
   <mat-card-content fxLayout="column" fxLayout.gt-sm="row">
     <div fxFlex fxFlex.gt-sm="50">
-      <svg id="europe-map-topic" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+      <svg id="europe-map-score" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
            viewBox="0 0 460.61 460.61">
         <defs>
           <path id="path-hr"
@@ -83,7 +73,7 @@
         <rect id="ocean" class="ocean" x="-222.26" y="-62.46" width="810.67" height="519.34"/>
         <g id="countries">
           <g id="eu28">
-            <use id="state-hr" class="no-eu-states" xlink:href="#path-hr"/>
+            <use id="state-hr" class="state" xlink:href="#path-hr"/>
             <use id="state-gb" class="state" xlink:href="#path-gb"/>
             <use id="state-si" class="state" xlink:href="#path-si"/>
             <use id="state-dk" class="state" xlink:href="#path-dk"/>
@@ -161,8 +151,8 @@
       </svg>
       <div class="legend">
         <div class="legend-color"></div>
-        <div class="legend-left">least popular</div>
-        <div class="legend-right">most popular</div>
+        <div class="legend-left">far-left</div>
+        <div class="legend-right">far-right</div>
       </div>
     </div>
     <div fxFlex fxFlex.gt-sm="50">

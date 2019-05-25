@@ -14,6 +14,7 @@ import {ChartPerDaysComponent} from './component/chart-per-days/chart-per-days.c
 import {ChartTweetsPerTopicComponent} from './component/chart-tweets-per-topic/chart-tweets-per-topic.component';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {MainComponent} from './main.component';
+import { ChartPoliticalOrientationPerCountryComponent } from './component/chart-political-orientation-per-country/chart-political-orientation-per-country.component';
 
 const routes: Routes = [
   {

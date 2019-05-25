@@ -98,7 +98,7 @@ export class ChartTweetsPerTopicComponent implements OnInit {
   }
 
   updateChart() {
-    this.svg = select('#europe-map');
+    this.svg = select('#europe-map-topic');
 
     this.resetChart();
 
