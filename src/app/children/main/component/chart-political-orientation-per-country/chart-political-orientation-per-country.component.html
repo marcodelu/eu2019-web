@@ -159,12 +159,13 @@
       <div style="display: block">
         <canvas baseChart
                 height="500px"
-                [datasets]="barChartData"
+                [data]="barChartData"
                 [labels]="barChartLabels"
                 [options]="barChartOptions"
                 [plugins]="barChartPlugins"
                 [legend]="barChartLegend"
-                [chartType]="'horizontalBar'">
+                [chartType]="'polarArea'"
+                [colors]="barColors">
         </canvas>
       </div>
     </div>

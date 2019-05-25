@@ -20,6 +20,7 @@ export interface CountryScore {
   name: string;
   countryCode: string;
   score: number;
+  totalTweets: number;
 }
 
 @Component({
@@ -44,9 +45,8 @@ export class ChartPoliticalOrientationPerCountryComponent implements OnInit {
   public barChartLegend = true;
   public barChartPlugins = [];
   public barChartOptions: ChartOptions;
-  public barChartData: any[] = [
-    {data: [], label: '', backgroundColor: 'rgba(255, 65, 12, 1)'}
-  ];
+  public barChartData = [];
+  public barColors = [];
 
   constructor(private chartService: ChartService,
               private dataService: DataService) {
@@ -56,35 +56,34 @@ export class ChartPoliticalOrientationPerCountryComponent implements OnInit {
     this.barChartOptions = this.chartService.getOptions();
     this.barChartOptions.legend.display = false;
     this.barChartOptions.showLines = false;
+    this.barChartOptions.layout = {
+      padding: {
+        left: 50,
+        right: 50,
+        top: 50,
+        bottom: 50
+      }
+    };
     this.barChartOptions.scales = {
       xAxes: [
         {
-          display: false,
-          ticks: {
-            min: 0,
-            suggestedMin: 0,
-            max: 5,
-            suggestedMax: 5,
-            beginAtZero: true,
-            stepSize: 5
-          }
+          display: false
         }
       ],
       yAxes: [
         {
-          gridLines: {
-            color: 'rgba(0, 0, 0, 0)'
-          },
-          display: true
+          display: false
         }
-      ]
-    };
-    this.barChartOptions.tooltips.callbacks = {
-      label(tooltipItem: Chart.ChartTooltipItem, data: Chart.ChartData): string | string[] {
-        return ' ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+      ],
+      ticks: {
+        min: 1,
+        suggestedMin: 1,
+        max: 5,
+        suggestedMax: 5
       }
     };
-    // this.barChartOptions.scales.display = false;
+
+    this.barColors = this.chartService.getPolarColors();
 
     this.partiesSubscription = timer(0, 60 * 1000)
       .subscribe(() => {
@@ -134,16 +133,19 @@ export class ChartPoliticalOrientationPerCountryComponent implements OnInit {
         this.countryScore.push({
           name: language.state,
           countryCode: language.countryCode,
-          score: Number.isNaN(percentageSum) ? null : percentageSum
+          score: Number.isNaN(percentageSum) ? null : percentageSum,
+          totalTweets: Number.isNaN(valueSum) ? null : valueSum
         });
       }
     });
 
     this.countryScore.forEach(country => {
       this.svg.select('#state-' + country.countryCode).classed('level-' + (Math.floor((country.score * 2))), true);
-      this.barChartLabels.push(country.name);
-      this.barChartData[0].data.push(country.score);
-      this.barChartData[0].label = country.name;
+
+      if (!!country.score) {
+        this.barChartLabels.push(country.name);
+        this.barChartData.push(country.score.toFixed(2));
+      }
     });
 
   }
@@ -169,7 +171,6 @@ export class ChartPoliticalOrientationPerCountryComponent implements OnInit {
 
     this.barChartLabels.length = 0;
     this.barChartData.length = 0;
-    this.barChartData.push({data: [], label: '', backgroundColor: 'rgba(255, 65, 12, 1)'});
   }
 
 }
