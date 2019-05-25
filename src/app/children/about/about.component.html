@@ -64,14 +64,29 @@
 
     <p>
       Our current set of keywords is available for download <a href="https://api.electionstats.eu/complete_hashtags.csv" target="_blank">here</a>.
+      <br> <br>
+      To compute an average political orientation score per country shown in the first chart, we assigned a political orientation score to
+      each national party, ranging from 1 (far left) to 5 (far right).
+      This classification is purely based on our own research effort on national parties. We classified parties as far left/right when they
+      showed (extreme) political positions (e.g., anti-immigration, anti-establishment, anti-élite attitudes, populism, euroscepticism,
+      etc.). Please, reach us if you do not agree with our current classification of a party. <br> <br>
+      Our current political orientation classification is available for download
+      <a href="https://api.electionstats.eu/parties.json" target="_blank">here</a>.
     </p>
 
 
     <h1>Limitations</h1>
-    <p>In our data, we do not observe a user’s country of origin; we only observe the language of a Tweet, which we use as a proxy for a
+    <p>
+      Please, notice that we do not do text mining of tweets. Instead, we simply count the number of tweets that contain a certain keyword
+      of interest. Despite being less accurate, this approach turned out to be the most appropriate for real-time data visualization.
+
+      <br> <br>
+
+      In our data, we do not observe a user’s country of origin; we only observe the language of a Tweet, which we use as a proxy for a
       user’s nationality. As languages do not directly correspond to countries (e.g., in some countries, multiple languages are spoken), we
-      have decided to drop the following countries in certain cases: Austria, Belgium, Republic of Cyprus, Ireland, Luxembourg, Malta. <br>
-      Instead, in some other charts, we aggregate countries speaking the same language (e.g., Austria and Germany).
+      have decided to drop the following countries in certain cases: Belgium, Croatia, Luxembourg, Malta. <br>
+      Instead, in some other charts, we aggregate countries speaking the same language (e.g., Austria and Germany, Greece and Republic of
+      Cyprus, Ireland and United Kingdom).
     </p>
 
     <h1>Disclaimer</h1>

@@ -94,7 +94,7 @@ export class ChartTweetsPerTopicComponent implements OnInit {
 
     this.numberOfTopisPerLanguage = this.menuValues.length;
 
-    this.menuSelected = this.menuValues.length > 0 ? 0 : null;
+    this.menuSelected = this.menuValues.length > 0 ? 9 : null;
   }
 
   updateChart() {

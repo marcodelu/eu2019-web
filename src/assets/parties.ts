@@ -1042,7 +1042,6 @@ export let partiesData: PartyItem[] = [
     spectrum: 2,
     country: 'fr'
   },
-  {party: 'Ensemble!', partyShort: '', partyTwitter: '@Ensemble_FdG', headOfParty: '', headOfPartyTwitter: '', spectrum: 1, country: 'fr'},
   {
     party: 'Ecologist Party',
     partyShort: 'PE',
