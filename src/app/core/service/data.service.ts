@@ -19,14 +19,17 @@ export class DataService {
   getMostActiveLanguages() {
     return combineLatest(
       this.httpService.get('/exported_tweets_lang.json'),
-      this.httpService.get('/exported_tweets_lang_history.json')
+      this.httpService.get('/exported_tweets_lang_history.json'),
+      this.httpService.get('/exported_tweets_lang_post.json')
     ).pipe(
-      map(([currentData, historyData]: [MostActiveLanguage[], MostActiveLanguage[]]) => {
+      map(([currentData, historyData, postData]: [MostActiveLanguage[], MostActiveLanguage[], MostActiveLanguage[]]) => {
         const result: MostActiveLanguage[] = [];
 
         currentData.forEach((c, index) => {
           const historyValue = index < historyData.length ? historyData[index].value : 0;
+          const postValue = index < postData.length ? postData[index].value : 0;
           c.value += historyValue;
+          c.value += postValue;
           result.push(c);
         });
 
@@ -47,14 +50,18 @@ export class DataService {
   getMostActiveParties() {
     return combineLatest(
       this.httpService.get('/exported_tweets_epgroups.json'),
-      this.httpService.get('/exported_tweets_epgroups_history.json')
+      this.httpService.get('/exported_tweets_epgroups_history.json'),
+      this.httpService.get('/exported_tweets_epgroups_post.json')
     ).pipe(
-      map(([currentData, historyData]: [MostActiveParty[], MostActiveParty[]]) => {
+      map(([currentData, historyData, postData]: [MostActiveParty[], MostActiveParty[], MostActiveParty[]]) => {
         const result: MostActiveParty[] = [];
 
         currentData.forEach((c, index) => {
           const historyValue = index < historyData.length ? historyData[index].value : 0;
+          const postValue = index < postData.length ? postData[index].value : 0;
           c.value += historyValue;
+          c.value += postValue;
+
           result.push(c);
         });
 
@@ -65,14 +72,18 @@ export class DataService {
   getTopics() {
     return combineLatest(
       this.httpService.get('/exported_tweets_topics.json'),
-      this.httpService.get('/exported_tweets_topics_history.json')
+      this.httpService.get('/exported_tweets_topics_history.json'),
+      this.httpService.get('/exported_tweets_topics_post.json')
     ).pipe(
-      map(([currentData, historyData]: [Topic[], Topic[]]) => {
+      map(([currentData, historyData, postData]: [Topic[], Topic[], Topic[]]) => {
         const result: Topic[] = [];
 
         currentData.forEach((c, index) => {
           const historyValue = index < historyData.length ? historyData[index].value : 0;
+          const postValue = index < postData.length ? postData[index].value : 0;
           c.value += historyValue;
+          c.value += postValue;
+
           result.push(c);
         });
 
@@ -83,14 +94,18 @@ export class DataService {
   getParties() {
     return combineLatest(
       this.httpService.get('/exported_tweets_parties.json'),
-      this.httpService.get('/exported_tweets_parties_history.json')
+      this.httpService.get('/exported_tweets_parties_history.json'),
+      this.httpService.get('/exported_tweets_parties_post.json')
     ).pipe(
-      map(([currentData, historyData]: [Party[], Party[]]) => {
+      map(([currentData, historyData, postData]: [Party[], Party[], Party[]]) => {
         const result: Party[] = [];
 
         currentData.forEach((c, index) => {
           const historyValue = index < historyData.length ? historyData[index].value : 0;
+          const postValue = index < postData.length ? postData[index].value : 0;
           c.value += historyValue;
+          c.value += postValue;
+
           result.push(c);
         });
 
