@@ -78,7 +78,6 @@ export class ChartPerDaysComponent implements OnInit, OnChanges {
   ngOnChanges(c: SimpleChanges) {
     if (c.data.previousValue && c.data.previousValue !== c.data.currentValue) {
       this.parseData();
-      console.log(this.data);
     }
   }
 

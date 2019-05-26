@@ -114,8 +114,6 @@ export class ChartPoliticalOrientationPerCountryComponent implements OnInit {
       }
     });
 
-    console.log(this.partiesMerge);
-
     this.languages.forEach(language => {
       const partiesByLanguage = this.partiesMerge.filter(p => p.country === language.countryCode);
 
