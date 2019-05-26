@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {timer} from 'rxjs';
 import {DataService} from '../../../../core/service/data.service';
-import {MostActiveLanguage} from '../chart-most-active-languages/chart-most-active-languages.component';
-import {MostActiveParty} from '../chart-most-active-parties/chart-most-active-parties.component';
+import {MostActiveLanguage} from './children/chart-most-active-languages/chart-most-active-languages.component';
+import {MostActiveParty} from './children/chart-most-active-parties/chart-most-active-parties.component';
 
 @Component({
   selector: 'app-dashboard',

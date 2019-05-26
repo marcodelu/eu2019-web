@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ChartOptions} from 'chart.js';
 import {Label} from 'ng2-charts';
-import {ChartService} from '../../../../core/service/chart.service';
+import {ChartService} from '../../../../../../core/service/chart.service';
 
 export interface MostActiveParty {
   epgroup: string;

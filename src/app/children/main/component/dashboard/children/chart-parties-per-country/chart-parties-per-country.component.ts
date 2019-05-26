@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ChartOptions} from 'chart.js';
 import {Label} from 'ng2-charts';
 import {timer} from 'rxjs';
-import {languageItem, languages} from '../../../../../assets/languages';
-import {ChartService} from '../../../../core/service/chart.service';
-import {DataService} from '../../../../core/service/data.service';
+import {languageItem, languages} from '../../../../../../../assets/languages';
+import {ChartService} from '../../../../../../core/service/chart.service';
+import {DataService} from '../../../../../../core/service/data.service';
 
 export interface Party {
   country: string;

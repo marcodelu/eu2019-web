@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {combineLatest} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {languages} from '../../../assets/languages';
-import {MostActiveLanguage} from '../../children/main/component/chart-most-active-languages/chart-most-active-languages.component';
-import {MostActiveParty} from '../../children/main/component/chart-most-active-parties/chart-most-active-parties.component';
-import {Party} from '../../children/main/component/chart-parties-per-country/chart-parties-per-country.component';
-import {Topic} from '../../children/main/component/chart-tweets-per-topic/chart-tweets-per-topic.component';
+import {MostActiveLanguage} from '../../children/main/component/dashboard/children/chart-most-active-languages/chart-most-active-languages.component';
+import {MostActiveParty} from '../../children/main/component/dashboard/children/chart-most-active-parties/chart-most-active-parties.component';
+import {Party} from '../../children/main/component/dashboard/children/chart-parties-per-country/chart-parties-per-country.component';
+import {Topic} from '../../children/main/component/dashboard/children/chart-tweets-per-topic/chart-tweets-per-topic.component';
 import {HttpService} from './http.service';
 
 @Injectable()

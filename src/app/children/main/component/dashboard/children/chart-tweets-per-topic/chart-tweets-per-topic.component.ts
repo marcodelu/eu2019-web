@@ -3,8 +3,8 @@ import {ChartOptions} from 'chart.js';
 import {BaseType, select, Selection} from 'd3-selection';
 import {Label} from 'ng2-charts';
 import {timer} from 'rxjs';
-import {ChartService} from '../../../../core/service/chart.service';
-import {DataService} from '../../../../core/service/data.service';
+import {ChartService} from '../../../../../../core/service/chart.service';
+import {DataService} from '../../../../../../core/service/data.service';
 
 export interface Topic {
   lang: string;

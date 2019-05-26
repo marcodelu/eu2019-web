@@ -3,10 +3,10 @@ import {ChartOptions} from 'chart.js';
 import {BaseType, select, Selection} from 'd3-selection';
 import {Label} from 'ng2-charts';
 import {timer} from 'rxjs';
-import {languageItem, languages} from '../../../../../assets/languages';
-import {partiesData, PartyItem} from '../../../../../assets/parties';
-import {ChartService} from '../../../../core/service/chart.service';
-import {DataService} from '../../../../core/service/data.service';
+import {languageItem, languages} from '../../../../../../../assets/languages';
+import {partiesData, PartyItem} from '../../../../../../../assets/parties';
+import {ChartService} from '../../../../../../core/service/chart.service';
+import {DataService} from '../../../../../../core/service/data.service';
 import {Party} from '../chart-parties-per-country/chart-parties-per-country.component';
 
 export interface PartyMerge {
