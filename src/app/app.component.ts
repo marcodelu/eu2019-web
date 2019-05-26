@@ -6,7 +6,7 @@ import {SplashScreenService} from './core/service/splash-screen.service';
 @Component({
   selector: 'app-root',
   template: `
-    <div fxFill style="overflow: auto">
+    <div>
       <router-outlet #o="outlet"></router-outlet>
     </div>
   `,

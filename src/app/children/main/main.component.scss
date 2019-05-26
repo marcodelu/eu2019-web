@@ -6,7 +6,27 @@ mat-toolbar {
 }
 
 #main-container {
-  padding: 24px 24px 0 24px;
+
+  mat-toolbar {
+    position: fixed;
+    z-index: 999;
+    height: 64px;
+    max-height: 64px;
+    min-height: 64px;
+
+    .mat-toolbar-row {
+      height: 64px;
+    }
+  }
+
+  #main-scroll {
+    padding-top: 64px;
+    overflow: scroll;
+  }
+
+  #main-content {
+    padding: 24px 24px 0 24px;
+  }
 }
 
 footer {

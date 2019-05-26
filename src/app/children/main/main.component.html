@@ -1,4 +1,4 @@
-<div fxFill fxLayout="column">
+<div id="main-container">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span style="flex: 1 1 auto;" fxLayoutAlign="start center">
@@ -10,14 +10,15 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div id="main-container" fxFlex fxLayout="column" fxLayoutAlign="start stretch" style="overflow: scroll">
-    <router-outlet #o="outlet"></router-outlet>
-    <div fxFlex></div>
-    <footer>
-      <span>made with ❤ from Tilburg</span>
-      <br>
-      <a routerLink="/terms">Terms</a> - <a routerLink="/privacy">Privacy policy</a>
-    </footer>
+  <div id="main-scroll">
+    <div id="main-content" fxLayout="column" fxLayoutAlign="start stretch" style="overflow: scroll">
+      <router-outlet #o="outlet"></router-outlet>
+      <div fxFlex></div>
+      <footer>
+        <span>made with ❤ from Tilburg</span>
+        <br>
+        <a routerLink="/terms">Terms</a> - <a routerLink="/privacy">Privacy policy</a>
+      </footer>
+    </div>
   </div>
-
 </div>
