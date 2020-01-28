@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   totalTweets = 0;
   lastUpdate = '2019-06-03T00:00:00';
+  onlineSince = '2019-05-16T00:00:00';
 
   constructor(private dataService: DataService) {
   }
@@ -31,7 +32,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             this.mostActiveLanguagesData = res;
 
             this.totalTweets = res.map(i => i.value).reduce((a, b) => a + b);
-            this.lastUpdate = Date();
+            // this.lastUpdate = Date();
           });
       });
 

@@ -2,7 +2,7 @@
 
   <div>
     <mat-card>
-      Hi there! Thank you for passing by. This live dashboard does not update anymore, but you can find some insights and and ex-post analysis <a href="https://github.com/andreantonacci/eu2019">here</a>
+      Hi there! Thank you for passing by. This dashboard does not update anymore, but you can find some insights and an ex-post analysis <a href="https://github.com/andreantonacci/eu2019">here</a>.
     </mat-card>
   </div>
 
@@ -16,13 +16,13 @@
     <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
       <mat-icon>refresh</mat-icon>
       <span fxFlex>&nbsp; Last update</span>
-      <span>{{lastUpdate | date:'short'}}</span>
+      <span>{{lastUpdate | date}}</span>
     </mat-card>
 
     <mat-card class="stats-card" fxFlex.gt-sm fxLayout="row" fxLayoutAlign="center center">
       <mat-icon>date_range</mat-icon>
       <span fxFlex>&nbsp; Online since </span>
-      <span>16 May 2019</span>
+      <span>{{onlineSince | date}}</span>
     </mat-card>
   </div>
 
