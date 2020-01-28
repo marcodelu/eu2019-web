@@ -1,10 +1,9 @@
 {
-  "name": "eu-elections-www",
-  "version": "0.0.0",
+  "name": "eu2019-web",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-net": "ng serve --host 192.168.1.102",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
