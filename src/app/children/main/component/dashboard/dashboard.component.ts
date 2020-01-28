@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   mostActivePartiesData: MostActiveParty[] = [];
 
   totalTweets = 0;
-  lastUpdate = Date();
+  lastUpdate = '2019-06-03T00:00:00';
 
   constructor(private dataService: DataService) {
   }
