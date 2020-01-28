@@ -1,27 +1,9 @@
-# EuElectionsWww
+# ElectionStats
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+Explore (dis)similarities between countries on political orientation, and the relative share of voice on many hot topics around Europe!
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ElectionStats is an application to track and analyze the progress of 2019 European elections through Twitter.
+This tool monitored in real-time 800 keywords and collected 22 million tweets. The data was then processed, aggregated, and presented through various charts.
+The structure consists of the frontend, developed in Angular 7; the backend, based on Python; and a Mongo database.
+The project was realized in collaboration with Andrea Antonacci (data analyst), sponsored by Tilburg School of Economics and Management and mentored by Dr. Hannes Datta.
+Press release: [Tilburg University](https://www.tilburguniversity.edu/current/news/tilburg-university-twitter-dashboard-continuously-measures-political-mood-eu)
